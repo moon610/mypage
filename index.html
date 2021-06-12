@@ -1,0 +1,457 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>我的起始页</title>
+		<meta charset="utf-8">
+		<link rel="icon" type="image/x-icon" href="gfavicon.ico" />
+		<!-- <link rel="icon" type="image/x-icon" href="https://img11.360buyimg.com/ddimg/jfs/t1/6233/29/14280/34956/60c0f6f0E4da9dbef/bdba00f39c977c95.png" /> -->
+
+		<style type="text/css">
+			html{
+				overflow-x: hidden;
+				overflow-y: hidden;
+			}
+			    #show{
+					transition: .25s;
+			        background-image:url(./123.jpg);
+					/* background-image: url("https://img10.360buyimg.com/ddimg/jfs/t1/183311/35/8317/480149/60c0f615Ed62fcaa4/84bfb80b8a51267e.jpg"); */
+			        background-size:cover;
+					background-repeat: no-repeat;
+					background-attachment: fixed;
+					background-position: center center;
+					overflow: hidden;
+					box-sizing: border-box;
+					z-index: -1;
+					position:absolute;
+					padding:0;
+					margin:0;
+					top:0;
+					left:0;
+					width: 100%;
+					height: 100%;
+					/* filter: blur(8px); */
+			    }
+			 #main{
+				z-index: 11;	
+			 	text-align: center; /*让div内部文字居中*/
+			 	width: 600px;
+			 	height: 440px;
+			 	margin: 8.5% auto auto;
+				/* margin: auto; */
+			 	position: absolute;
+			 	top: 0;
+			 	left: 0;
+			 	right: 0;
+			 	bottom: 0px;
+				/* border: 3px solid #333333; */
+			 }
+			 #searchCondition{
+				 /* border: 2px solid #FF0000; */
+				 display: none;
+				 height: 300px;
+				 transition: .3s;
+			 }
+			 #aword{
+				 margin: 34% auto;
+				 width: 100%;
+				 left: 0;
+				 right: 0;
+				 position: absolute;
+				 color: white;
+				 font-size: 12px;
+				 font-family: "宋体";
+				 text-align: center;
+				 user-select: none;
+				 transition: background-position .5s;
+				 /* border: 2px solid #000000; */
+			 }
+			 #aword:hover{
+				 color: black;
+				background: linear-gradient(to right,rgba(255,255,255,0.8),rgba(255,255,255,0.5) 75%,rgba(255,255,255,0));
+			 }
+			 #timeText {
+			 	z-index: 2;
+			 	user-select: none;/* 文本不可选中 */
+			 	transition: font-size .25s;
+			    color: white;
+			    font-size: 36px;
+				font-family: "微软雅黑";
+			 	letter-spacing: 0px;
+			    /* cursor: pointer; */
+			    line-height: 36px;
+			 	font-weight: 200;
+			 	text-align: center;
+			 	margin-top: -42px;
+			 	margin-bottom: 0;
+			 	left: 0;
+			 	right: 0;
+			 	position: absolute;
+				/* border: 1px solid #FF0000; */
+			 }
+			#search{
+				transition: width .25s;
+				margin-top: 28px;
+			    width:230px;
+			    /* padding:14px 0px ; */
+				height: 43px;
+				color: #000000;
+				background-color:rgba(255,255,255,0.3); /*背景透明*/ 
+			    border: 0px;
+				border-color: rgba(255,255,255,0);
+				border-style: solid;
+			    border-radius:40px;/*圆角*/
+			    outline:none;
+			    font-size:15px;
+				text-align: center;
+				outline-style:none;/*取消焦点时的外边框*/
+			}
+			input::placeholder {
+			        color: rgba(255,255,255,0.7);
+			    }
+
+			#search:focus{
+				width:530px;
+				background-color: white;
+			}
+			
+			#search:hover{
+				width: 530px;
+				background:rgba(255,255,255,0.6);
+			}
+			#search:focus:hover{
+				background-color: white;
+			}
+			input::-moz-placeholder { 
+				color: white;
+			}
+			#conTable{
+				border: 0;
+				margin: 5% auto auto;
+				border-color: #000000;
+			}
+			.off{
+			    background: rgba(255,255,255,0.4);
+			    color: #fff;
+			    font-size: 0.8125em;
+			    padding: 8px 10px;
+				width: 110px;
+			    border-radius: 30px;
+			    border:0;
+			}
+			.on{
+			   background: rgba(255,255,255,0.7);
+			   color: #fff;
+			   font-size: 13px;
+			   padding: 8px 10px;
+			   width: 110px;
+			   border-radius: 30px;
+			   border:0;
+			}
+			.on.off:active{
+			    background: rgba(120,120,120,0.5);
+			    color: #fff;
+			    font-size: 13px;
+			    padding: 8px 10px;
+			    width: 110px;
+			    border-radius: 30px;
+			    border:0;
+				transition: 0.1s;
+			}
+			.off:active{
+			   background: rgba(120, 120, 120, 0.5);
+			   color: #fff;
+			   font-size: 13px;
+			   padding: 8px 10px;
+			   width: 110px;
+			   border-radius: 30px;
+			   border:0;
+			   transition: 0.1s;
+			}
+			.re{
+				background: rgba(255,255,255,0.4);
+				color: #fff;
+				font-size: 13px;
+				padding: 8px 10px;
+				width: 110px;
+				border-radius: 30px;
+				border:0;
+			}
+			.re:active{
+				background: rgba(120, 120, 120, 0.5);
+				color: #fff;
+				font-size: 13px;
+				padding: 8px 10px;
+				width: 110px;
+				border-radius: 30px;
+				border:0;
+				transition: 0.1s;
+			}
+			#time{
+				background-color: rgba(255,255,255,0.4);
+				color: #fff;
+				font-size: 13px;
+				text-align: center;
+				padding: 8px 10px;
+				width: 110px;
+				border-radius: 30px;
+				border:0;
+				appearance: none;
+			}
+			option{
+				background-color: rgba(0,0,0,0.5);
+				color: #ffffff;
+			}
+			#site{
+				
+			    width:110px;
+			    /* padding:14px 0px ; */
+				height: 32px;
+				background-color:rgba(255,255,255,0.4); /*背景透明*/ 
+			    border: 0px;
+				border-color: rgba(255,255,255,0);
+				border-style: solid;
+			    border-radius:30px;/*圆角*/
+			    outline:none;
+			    font-size:13px;
+				text-align: center;
+				outline-style:none;/*取消焦点时的外边框*/
+			}
+		</style>
+		<title></title>
+	</head>
+	<script language="JavaScript">
+	
+	function keyDown(e){
+	//input回车  
+	  var keycode = e.which;
+	   var searchword = document.getElementById("search");
+	  if (keycode == 13 ) //回车键是13 
+	  { 
+	      viewUrl(searchword.value);//回车后的响应函数             
+	  } 
+	}
+	
+	function viewUrl(searchWord){
+		var bt1 = document.getElementById("lr");
+		var bt2 = document.getElementById("intext");
+		var btntime = document.getElementById("time");
+		var site = document.getElementById("site");
+		var url = "https://www.google.com/search?q="+searchWord+"&num=20&pws=0&safe=off&hl=zh-CN&gl=sg&aq=f"
+		+"&as_sitesearch="+site.value+"&as_qdr="+btntime.value;
+		if(bt1.className=="on"){
+			url = "https://www.google.com/search?q="+searchWord+"&num=20&pws=0&safe=off&hl=zh-CN&gl=sg&aq=f"
+			+"&as_sitesearch="+site.value+"&as_qdr="+btntime.value+"&lr=lang_zh-CN";
+		}
+		if(bt2.className=="on"){
+			url = "https://www.google.com/search?q="+"intext:"+searchWord+" intitle:"+searchWord+"&num=20&pws=0&safe=off&hl=zh-CN&gl=sg&aq=f"
+			+"&as_sitesearch="+site.value+"&as_qdr="+btntime.value;
+		}
+		if(bt1.className=="on"&&bt2.className=="on"){
+			url = "https://www.google.com/search?q="+"intext:"+searchWord+" intitle:"+searchWord+"&num=20&pws=0&safe=off&hl=zh-CN&gl=sg&aq=f"
+			+"&as_sitesearch="+site.value+"&lr=lang_zh-CN"+"&as_qdr="+btntime.value;
+		}
+			
+		//num显示结果页数；pws个性化搜索；safe安全过滤；hl界面语言；gl区域
+		window.location.href= url;
+		// window.open( url );
+		// location.href= url;
+
+	}
+	var to = 99999999;
+	//得到时间并写入div
+	function getTime(){
+	    //获取当前时间
+	    var date = new Date();
+		var h=date.getHours();
+		var m=date.getMinutes();
+		m=checkTime(m);
+		var ti = document.getElementById("timeText");
+		ti.innerHTML = h+":"+m;
+		ti.style.fontSize="38px";
+		setTimeout(function(){
+			var ti = document.getElementById("timeText");
+			ti.style.fontSize="36px";
+		},to);
+	}
+	function checkTime(i){
+	if (i<10) 
+	  {i="0" + i}
+	  return i
+	}
+	//使用定时器每秒向div写入当前时间
+	setInterval("getTime()",1000);
+	
+	function onfocusbg(){
+		var bg = document.getElementById("show");
+		
+		bg.style.transform = "scale(1.1)";
+		bg.style.filter = "blur(8px)";
+		to = 300;
+		
+		document.getElementById("time").options[0].selected = true;
+		
+	}
+	function onblurbg(){
+		var bg = document.getElementById("show");
+		bg.style.transform = "scale(1.0)";
+		bg.style.filter = "blur(0px)";
+		to = 99999999;
+		
+	}
+	
+	// window.onload = function(){
+		// btntime.options[0].selected = true;
+	// }
+	function checkbtntime(){
+		var btntime = document.getElementById("time");
+		btntime.onchange = function(){
+			if(btntime.value!="null"){
+				btntime.style.backgroundColor = "rgba(255,255,255,0.7)";
+			}
+			else if(btntime.value=="null"){
+				btntime.style.backgroundColor = "rgba(255,255,255,0.4)"
+			}
+		}
+	}
+	setInterval("checkbtntime()",300);
+	function onfocussite(){
+		var site = document.getElementById("site");
+		site.style.backgroundColor = "rgba(255,255,255,0.7)";
+	}
+	function onblursite(){
+		var site = document.getElementById("site");
+			if(site.value!=""){
+				site.style.backgroundColor = "rgba(255,255,255,0.7)";
+			}else{
+				site.style.backgroundColor = "rgba(255,255,255,0.4)";
+			}
+	}
+	function bt1onclick(){
+		var bt1 = document.getElementById("lr");
+				if(bt1.className=="off"){ 
+				    bt1.className = "on";
+				}else{
+				    bt1.className = "off";
+				}
+	}
+	function bt2onclick(){
+		var bt2 = document.getElementById("intext")
+				if(bt2.className=="off"){ 
+				    bt2.className = "on";
+				}else{
+				    bt2.className = "off";
+				}
+	}
+	function resetonclick(){
+			var submit = document.getElementById("submit");
+			var bt1 = document.getElementById("lr");
+			var bt2 = document.getElementById("intext");
+			var btntime = document.getElementById("time");
+			var site = document.getElementById("site");
+				bt1.className = "off";
+				bt2.className = "off";
+				btntime.options[0].selected = true;
+				site.value = "";
+				site.style.backgroundColor = "rgba(255,255,255,0.4)";
+				btntime.style.backgroundColor = "rgba(255,255,255,0.4)"
+	}
+	function submitonclick(){
+				var searchword = document.getElementById("search");
+				 viewUrl(searchword.value);
+	}
+	function timeclick(){
+		var condiv = document.getElementById("searchCondition");
+			
+			if(condiv.className=="false"){
+				condiv.className = "true";
+				condiv.style.display = "block";
+			}
+			else{
+				condiv.className = "false"
+				condiv.style.display = "none";
+			}
+	}
+	
+	document.addEventListener('contextmenu',function(e){e.preventDefault()});//禁用鼠标右键
+	// document.addEventListener('contextmenu',function(e){
+	// 	var condiv = document.getElementById("searchCondition");
+		
+	// 	if(condiv.className=="false"){
+	// 		condiv.className = "true";
+	// 		condiv.style.display = "block";
+	// 	}
+	// 	else{
+	// 		condiv.className = "false"
+	// 		condiv.style.display = "none";
+	// 	}
+	// 	e.preventDefault();
+	// });	
+	var xhr = new XMLHttpRequest();
+	xhr.open('get', 'https://v1.hitokoto.cn/?c=i&c=d&c=f&c=h&c=j&c=k');
+	xhr.onreadystatechange = function () {
+	  if (xhr.readyState === 4) {
+	    var data = JSON.parse(xhr.responseText);
+				  document.getElementById("text").innerHTML = data.hitokoto;
+				  if(data.from_who==null){
+					   document.getElementById("from").innerHTML = "——" + "「" + data.from + "」";
+				  }else{
+					  document.getElementById("from").innerHTML = "——" + data.from_who + "「" + data.from + "」";
+				  }
+	  }
+	}
+	xhr.send();
+	</script>
+	<body >
+		<div id="show"></div>
+		<!-- <div id="blackbg"></div> -->
+		
+		<div id="main">
+			<div id="timeclick" ondblclick="timeclick()" style="padding: 20px;width:50px;margin:0 auto;position: relative;z-index: 3;">
+			</div>
+			<h1 id="timeText"></h1>
+			<input type="search" id="search" name="q" onkeydown="keyDown(event)" autocomplete="off" autofocus="autofocus"
+			  placeholder="Search" onfocus="onfocusbg()" onblur="onblurbg()">
+			  <div id="searchCondition" class="false">
+				  <table id="conTable">
+					  <tr>
+						  <td>
+							  <button id="lr" class="off" onclick="bt1onclick()">仅搜索中文</button>
+							  <button id="intext" class="off" onclick="bt2onclick()">在内容中搜索</button>
+							  <select id="time" name="selecttime">
+							  	<option value="null" selected="selected">选择时间</option>
+							  	<option value="h">过去一小时</option>
+							  	<option value="d">过去一天</option>
+							  	<option value="w">过去一周</option>
+							  	<option value="m">过去一月</option>
+							  	<option value="y">过去一年</option>
+							  	<option value="y3">过去三年</option>
+							  </select>
+							  <br /><br />
+							  <button id="reset" class="re" onclick="resetonclick()">重置</button>
+							  <input type="text" id="site" placeholder="site:" autocomplete="off" onfocus="onfocussite()" onblur="onblursite()">
+							  <button id="submit" class="re" onclick="submitonclick()">确认</button>
+							  </td>
+							  
+					  </tr>
+				  </table>
+				<!-- &as_epq=完全匹配""
+				 &as_oq=至少匹配一个
+				 &as_eq=不包含
+				 &as_nlo=数字范围low
+				 &as_nhi=数字范围high
+				 &lr=搜索结果语言
+				 &cr=服务器所在国家
+				 &as_qdr=最后更新时间
+				 &as_sitesearch=指定网站中搜索
+				 &as_occt=关键词出现位置body title url正文标题链接
+				 &safe=images安全搜索
+				 &as_filetype=文件类型
+				 &tbs=时间 -->
+			  </div>
+		</div>
+		<div id="aword">
+						  <p id="text"></p>
+						  <p id="from"></a></p>
+		</div>
+	</body>
+</html>
