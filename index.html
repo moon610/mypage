@@ -106,7 +106,7 @@
 				outline-style:none;/*取消焦点时的外边框*/
 			}
 			input::placeholder {
-			        color: rgba(255,255,255,0.7);
+			        color: rgba(255,255,255,0.8);
 			    }
 
 			#search:focus{
@@ -116,10 +116,15 @@
 			
 			#search:hover{
 				width: 530px;
-				background:rgba(255,255,255,0.6);
+				background:rgba(255,255,255,0.8);
+			}#search:hover::placeholder{
+				color: rgba(0,0,0,0.8);
 			}
 			#search:focus:hover{
 				background-color: white;
+			}
+			#search:focus:hover::placeholder{
+				color: rgba(255,255,255,0.8);
 			}
 			input::-moz-placeholder { 
 				color: white;
