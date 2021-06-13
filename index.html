@@ -376,29 +376,16 @@
 	}
 	
 	document.addEventListener('contextmenu',function(e){e.preventDefault()});//禁用鼠标右键
-	// document.addEventListener('contextmenu',function(e){
-	// 	var condiv = document.getElementById("searchCondition");
-		
-	// 	if(condiv.className=="false"){
-	// 		condiv.className = "true";
-	// 		condiv.style.display = "block";
-	// 	}
-	// 	else{
-	// 		condiv.className = "false"
-	// 		condiv.style.display = "none";
-	// 	}
-	// 	e.preventDefault();
-	// });	
 	var xhr = new XMLHttpRequest();
-	xhr.open('get', 'https://v1.hitokoto.cn/?c=i&c=d&c=f&c=h&c=j&c=k');
+	xhr.open('get', 'https://v1.hitokoto.cn/?c=i&c=d&c=h&c=j&c=k');
 	xhr.onreadystatechange = function () {
 	  if (xhr.readyState === 4) {
 	    var data = JSON.parse(xhr.responseText);
 				  document.getElementById("text").innerHTML = data.hitokoto;
-				  if(data.from_who==null){
-					   document.getElementById("from").innerHTML = "——" + "「" + data.from + "」";
+				  if(data.from_who!=null){
+					   document.getElementById("from").innerHTML = "——" + data.from_who + "「" + data.from + "」";
 				  }else{
-					  document.getElementById("from").innerHTML = "——" + data.from_who + "「" + data.from + "」";
+					  document.getElementById("from").innerHTML = "——" + "「" + data.from + "」";
 				  }
 	  }
 	}
@@ -437,24 +424,11 @@
 							  
 					  </tr>
 				  </table>
-				<!-- &as_epq=完全匹配""
-				 &as_oq=至少匹配一个
-				 &as_eq=不包含
-				 &as_nlo=数字范围low
-				 &as_nhi=数字范围high
-				 &lr=搜索结果语言
-				 &cr=服务器所在国家
-				 &as_qdr=最后更新时间
-				 &as_sitesearch=指定网站中搜索
-				 &as_occt=关键词出现位置body title url正文标题链接
-				 &safe=images安全搜索
-				 &as_filetype=文件类型
-				 &tbs=时间 -->
 			  </div>
 		</div>
 		<div id="aword">
 						  <p id="text"></p>
-						  <p id="from"></a></p>
+						  <p id="from"></p>
 		</div>
 	</body>
 </html>
