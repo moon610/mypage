@@ -296,7 +296,6 @@
 		bg.style.filter = "blur(8px)";
 		to = 300;
 		
-// 		document.getElementById("time").options[0].selected = true;
 		
 	}
 	function onblurbg(){
@@ -307,7 +306,7 @@
 		
 	}
 	
-	window.onload = function(){
+	function onloadbody(){
 		document.getElementById("time").options[0].selected = true;
 	}
 	function checkbtntime(){
@@ -396,7 +395,7 @@
 	}
 	xhr.send();
 	</script>
-	<body >
+	<body onload="onloadbody()">
 		<div id="show"></div>
 		<!-- <div id="blackbg"></div> -->
 		
