@@ -381,7 +381,7 @@
 	
 	document.addEventListener('contextmenu',function(e){e.preventDefault()});//禁用鼠标右键
 	var xhr = new XMLHttpRequest();
-	xhr.open('get', 'https://v1.hitokoto.cn/?c=i&c=d&c=h&c=j&c=k');
+	xhr.open('get', 'https://v1.hitokoto.cn/?c=i&c=d&c=h');
 	xhr.onreadystatechange = function () {
 	  if (xhr.readyState === 4) {
 	    var data = JSON.parse(xhr.responseText);
