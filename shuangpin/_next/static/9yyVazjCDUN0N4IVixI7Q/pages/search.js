@@ -1,0 +1,1 @@
+(window.webpackJsonp=window.webpackJsonp||[]).push([[28],{Pkxi:function(n,w,i){(window.__NEXT_P=window.__NEXT_P||[]).push(["/search",function(){return i("Xdqi")}])}},[["Pkxi",0,1,2,3,4,6,7,9,8,14,5]]]);
