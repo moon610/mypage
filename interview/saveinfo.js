@@ -1,4 +1,6 @@
-document.documentElement.scrollTop = JSON.parse(localStorage.getItem('saveInfo')).scroll
+if(JSON.parse(localStorage.getItem('saveInfo'))) {
+  document.documentElement.scrollTop = JSON.parse(localStorage.getItem('saveInfo')).scroll
+}
 
 let saveInfo = {
   url: window.location.href,
