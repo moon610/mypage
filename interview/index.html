@@ -16,7 +16,12 @@
         resolve(info)
       })
     }().then((info) => {
-      window.location.replace(info.url)
+      if(info){
+        window.location.replace(info.url)
+      } else {
+        window.location.replace(location.href + '1-小册食用指南.htm')
+      }
+      
     }))
   </script>
 </body>
