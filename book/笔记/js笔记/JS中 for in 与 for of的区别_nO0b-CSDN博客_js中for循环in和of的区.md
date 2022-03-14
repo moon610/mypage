@@ -1,9 +1,3 @@
-<img width="36" height="32" src="../_resources/original_4f24a0e9eab24558a71c482d8ccd023c.png"/>
-
-[NO0b](https://blog.csdn.net/q5706503) 2018-10-06 14:32:21 <img width="24" height="24" src="../_resources/articleReadEyes_796529f817c34f9fa7eafa5a84693058.png"/>15871 <a id="blog_detail_zk_collection"></a><img width="20" height="20" src="../_resources/tobarCollect_f8925afc96c74c2fa914963f078e3d6a.png"/>收藏 62 
-
-版权声明：本文为博主原创文章，遵循 [CC 4.0 BY-SA](http://creativecommons.org/licenses/by-sa/4.0/) 版权协议，转载请附上原文出处链接和本声明。
-
 最直接的区别就是:
 
 ### <a id="t0"></a>for in遍历的是数组的索引（即键名），

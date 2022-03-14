@@ -56,11 +56,11 @@
 
 简单截取一下公司后台项目，现在后台大概有四五十个 api 模块
 
-![](../_resources/591e388437a8aea99794b175b1098389_2755bbc242d0402b8.webp)
+![](https://gitee.com/herrry/image-repository/raw/master/img/202203141612848.webp)
 
 如图可见模块有很多，而且随着业务的迭代，模块还会会越来越多。 所以这里建议根据业务模块来划分 views，并且 将views 和 api 两个模块一一对应，从而方便维护。如下图：
 
-<img width="572" height="322" src="../_resources/c185f7d37a268a1ff4044ff60f5341c0_785141efa21e4c8ea.webp"/>
+<img width="572" height="322" src="https://gitee.com/herrry/image-repository/raw/master/img/202203141612849.webp"/>
 
 如 article 模块下放的都是文章相关的 api，这样不管项目怎么累加，api和views的维护还是清晰的，当然也有一些全区公用的api模块，如七牛upload，remoteSearch等等，这些单独放置就行。
 
@@ -68,7 +68,7 @@
 
 这里的 components 放置的都是全局公用的一些组件，如上传组件，富文本等等。一些页面级的组件建议还是放在各自views文件下，方便管理。如图：
 
-![](../_resources/a355aa4081709f7d9fecf6dfaf08129d_ca7b108b432141548.webp)
+![](https://gitee.com/herrry/image-repository/raw/master/img/202203141612850.webp)
 
 ### store
 
@@ -82,7 +82,7 @@
 
 ### jquery (本项目已移除)
 
-管理后台不同于前台项目，会经常用到一些第三方插件，但有些插件是不得不依赖 jquery 的，如市面很多富文本基都是依赖 jquery 的，所以干脆就直接引入到项目中省事(gzip之后只有34kb，而且常年from cache,不要考虑那些吹毛求疵的大小问题，这几kb和提高的开发效率根本不能比)。但是如果第三方库的代码中出现![.xxx或jQuery.xxx或window.jQuery或window.](../_resources/equation_tex_.xxx_E6_88_96jQuery_847c8bdb7fbc489c9.svg)则会直接报错。要达到类似的效果，则需要使用 webpack 内置的 `ProvidePlugin` 插件，配置很简单，只需要
+管理后台不同于前台项目，会经常用到一些第三方插件，但有些插件是不得不依赖 jquery 的，如市面很多富文本基都是依赖 jquery 的，所以干脆就直接引入到项目中省事(gzip之后只有34kb，而且常年from cache,不要考虑那些吹毛求疵的大小问题，这几kb和提高的开发效率根本不能比)。但是如果第三方库的代码中出现![.xxx或jQuery.xxx或window.jQuery或window.](https://gitee.com/herrry/image-repository/raw/master/img/202203141612851.svg)则会直接报错。要达到类似的效果，则需要使用 webpack 内置的 `ProvidePlugin` 插件，配置很简单，只需要
 
 ```
 new webpack.ProvidePlugin({
@@ -136,13 +136,13 @@ import getArticle from 'api/article'
 
 不管是多人合作还是个人项目，代码规范是很重要的。这样做不仅可以很大程度地避免基本语法错误，也保证了代码的可读性。这所谓工欲善其事，必先利其器，个人推荐 eslint+vscode 来写 vue，绝对有种飞一般的感觉。效果如图：
 
-<img width="572" height="340" src="../_resources/709326a6df695ff7b92ba4c4d6ff7d71_3b64a75fa47445cb8.webp"/>
+<img width="572" height="340" src="https://gitee.com/herrry/image-repository/raw/master/img/202203141612852.webp"/>
 
 每次保存，vscode就能标红不符合eslint规则的地方，同时还会做一些简单的自我修正。安装步骤如下：
 
 首先安装eslint插件
 
-<img width="572" height="292" src="../_resources/2c4a6510d1a0c8a4086ea99daccf9b2d_c79fbd6814d7421e9.webp"/>
+<img width="572" height="292" src="https://gitee.com/herrry/image-repository/raw/master/img/202203141612853.webp"/>
 
 安装并配置完成 ESLint 后，我们继续回到 VSCode 进行扩展设置，依次点击 文件 > 首选项 > 设置 打开 VSCode 配置文件,添加如下配置
 
@@ -303,7 +303,7 @@ webpackConfig.plugins.push(new BundleAnalyzerPlugin())
 
 效果图
 
-<img width="572" height="275" src="../_resources/a3a16e24b776805e548424326152e73f_37cad2d432b443a7b.webp"/>
+<img width="572" height="275" src="https://gitee.com/herrry/image-repository/raw/master/img/202203141612854.webp"/>
 
 webpack-bundle-analyzer这个插件还是很有用的，对后期的代码优化什么的，最重要的是它够**装逼**~
 
@@ -321,7 +321,7 @@ webpack-bundle-analyzer这个插件还是很有用的，对后期的代码优化
 
 其实大家也知道，平时的开发中交流成本占据了我们很大一部分时间，但前后端如果有一个好的协作方式的话能解决很多时间。我司开发流程都是前后端和产品一起开会讨论项目，之后后端根据需求，首先定义数据格式和api，然后 mock api 生成好文档，我们前端才是对接接口的。这里推荐一个文档生成器 [swagger](https://link.juejin.cn/?target=http%3A%2F%2Fswagger.io%2F "http://swagger.io/")。 **swagger**是一个REST APIs文档生成工具，可以在许多不同的平台上从代码注释中自动生成，开源，支持大部分语言，社区好，总之就是一个强大，如下图的api 文档(swagger自动生成，ui忽略)
 
-<img width="572" height="318" src="../_resources/49a6c7a90d484892048b0b80babcf374_67b2dae2528b4e06a.webp"/>
+<img width="572" height="318" src="https://gitee.com/herrry/image-repository/raw/master/img/202203141612855.webp"/>
 
 api 地址，需要传是没参数，需要的传参类型，返回的数据格式什么都一清二楚了。
 
@@ -333,7 +333,7 @@ api 地址，需要传是没参数，需要的传参类型，返回的数据格�
 
 element-ui 默认的icon不是很多，这里要安利一波阿里的[iconfont](https://link.juejin.cn/?target=http%3A%2F%2Ficonfont.cn%2F "http://iconfont.cn/")简直是神器，不管是公司项目还是个人项目都在使用。它提供了png,ai,svg三种格式，同时使用也支持unicode，font-class，symbol三种方式。由于是管理后台对兼容性要求不高，楼主平时都喜欢用symbol，晒一波我司后台的图标(都是楼主自己发挥的)。
 
-![iconfont.png](../_resources/50761c4e9bd53f840a6dde5bb233559f_46828c66dd114014b.webp)
+![iconfont.png](https://gitee.com/herrry/image-repository/raw/master/img/202203141612856.webp)
 
 详细具体的使用可以见文章 [手摸手，带你优雅的使用 icon](https://juejin.cn/post/6844903517564436493)
 
@@ -343,7 +343,7 @@ element-ui 默认的icon不是很多，这里要安利一波阿里的[iconfont](
 
 different router the same component vue。真实的业务场景中，这种情况很多。比如
 
-<img width="572" height="47" src="../_resources/ed2de15673673276b00e205c042048e4_fa21e308d13f4694b.webp"/>
+<img width="572" height="47" src="https://gitee.com/herrry/image-repository/raw/master/img/202203141612857.webp"/>
 
 我创建和编辑的页面使用的是同一个component,默认情况下当这两个页面切换时并不会触发vue的created或者mounted钩子，官方说你可以通过watch $route的变化来做处理，但其实说真的还是蛮麻烦的。后来发现其实可以简单的在 router-view上加上一个唯一的key，来保证路由切换时都会重新渲染触发钩子了。这样简单的多了。
 
@@ -371,7 +371,7 @@ npm run build:prod
 复制代码
 ```
 
-<img width="572" height="37" src="../_resources/4b23bedbc78aa03295a4a58b73d263b8_2a28fbc268954ecd8.webp"/>
+<img width="572" height="37" src="https://gitee.com/herrry/image-repository/raw/master/img/202203141612858.webp"/>
 
 还是属于能接受时间的范围。 主站PC站基于nodejs、Vue实现服务端渲染，所以不仅需要依赖nodejs，而且需要利用pm2进行nodejs生命周期的管理。为了加速线上镜像构建的速度，我们利用taobao源 [registry.npm.taobao.org](https://link.juejin.cn/?target=https%3A%2F%2Fregistry.npm.taobao.org "https://registry.npm.taobao.org") 进行加速, 并且将一些常见的npm依赖打入了基础镜像，避免每次都需要重新下载。 这里注意下 建议不要使用cnpm install或者update 它的包都是一个link，反正会有各种诡异的bug，这里建议这样使用
 
@@ -389,19 +389,19 @@ npm install --registry=https://registry.npm.taobao.org
 常规占坑，这里是手摸手，带你用vue撸后台系列。 完整项目地址：[vue-element-admin](https://link.juejin.cn/?target=https%3A%2F%2Fgithub.com%2FPanJiaChen%2Fvue-element-admin "https://github.com/PanJiaChen/vue-element-admin")
 
 - [手摸手，带你用 vue 撸后台 系列一（基础篇）](https://juejin.cn/post/6844903476661583880)
-    
+  
 - [手摸手，带你用 vue 撸后台 系列二(登录权限篇)](https://juejin.cn/post/6844903478880370701)
-    
+  
 - [手摸手，带你用 vue 撸后台 系列三 (实战篇)](https://juejin.cn/post/6844903481224986638)
-    
+  
 - [手摸手，带你用 vue 撸后台 系列四(vueAdmin 一个极简的后台基础模板)](https://juejin.cn/post/6844903486241374221)
-    
+  
 - [手摸手，带你用 vue 撸后台 系列五(v4.0 新版本)](https://juejin.cn/post/6844903840626507784)
-    
+  
 - [手摸手，带你封装一个 vue component](https://link.juejin.cn/?target=https%3A%2F%2Fsegmentfault.com%2Fa%2F1190000009090836 "https://segmentfault.com/a/1190000009090836")
-    
+  
 - [手摸手，带你优雅的使用 icon](https://juejin.cn/post/6844903517564436493)
-    
+  
 - [手摸手，带你用合理的姿势使用 webpack4（上）](https://juejin.cn/post/6844903652956569608)
-    
+  
 - [手摸手，带你用合理的姿势使用 webpack4（下）](https://juejin.cn/post/6844903652956585992)

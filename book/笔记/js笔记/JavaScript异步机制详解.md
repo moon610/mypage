@@ -1,6 +1,6 @@
 ## JavaScript异步机制详解
 
-[<img width="40" height="40" src="../_resources/13-394c31a9cb492fcb39c27422ca7d2_a952722d4a5a49afa.jpg"/>](https://www.jianshu.com/u/0fa6f5d09040)
+[<img width="40" height="40" src="https://gitee.com/herrry/image-repository/raw/master/img/202203141616124.jpg"/>](https://www.jianshu.com/u/0fa6f5d09040)
 
 0.6442018.01.26 15:03:06字数 2,397阅读 4,323
 
@@ -51,7 +51,7 @@ xhr.send(); // 发起函数
 
 ## 二、单线程与多线程
 
-![](../_resources/3985563-11b3608aaa49f7b5_288159727bdc4c5c8061c6260.png)
+![](https://gitee.com/herrry/image-repository/raw/master/img/202203141616125.png)
 
 在上面介绍异步的过程中就可能会纳闷：既然JavaScript是单线程，怎么还存在异步，那些耗时操作到底交给谁去执行了？
 
@@ -94,7 +94,7 @@ JS引擎可以说是JS虚拟机，负责JS代码的解析和执行。通常包�
 
 这一切的解释就需要继续了解消息队列和事件循环。
 
-![](../_resources/3985563-b1682e665abed777_5a2c4bd7d01c46c29cf2eba4e.png)
+![](https://gitee.com/herrry/image-repository/raw/master/img/202203141616126.png)
 
 如上图所示，左边的栈存储的是同步任务，就是那些能立即执行、不耗时的任务，如变量和函数的初始化、事件的绑定等等那些不需要回调函数的操作都可归为这一类。
 
@@ -104,7 +104,7 @@ JS引擎线程用来执行栈中的同步任务，当所有同步任务执行完
 
 JS引擎线程从消息队列中读取任务是不断循环的，每次栈被清空后，都会在消息队列中读取新的任务，如果没有新的任务，就会等待，直到有新的任务，这就叫事件循环。
 
-![](../_resources/3985563-4a3596c01cbef3bc_eb14e04f16c045a588416f432.png)
+![](https://gitee.com/herrry/image-repository/raw/master/img/202203141616127.png)
 
 上图以AJAX异步请求为例，发起异步任务后，由AJAX线程执行耗时的异步操作，而JS引擎线程继续执行堆中的其他同步任务，直到堆中的所有异步任务执行完毕。然后，从消息队列中依次按照顺序取出消息作为一个同步任务在JS引擎线程中执行，那么AJAX的回调函数就会在某一时刻被调用执行。
 

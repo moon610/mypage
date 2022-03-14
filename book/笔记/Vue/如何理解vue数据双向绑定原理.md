@@ -149,10 +149,10 @@ return val;
 
 ## **实现一个 Compile**
 
-Compile 主要的作用是把 new SelfVue 绑定的 dom 节点，（也就是 el 标签绑定的 id）遍历该节点的所有子节点，找出其中所有的 v-指令和" { { } } ".
+Compile 主要的作用是把 new SelfVue 绑定的 dom 节点，（也就是 el 标签绑定的 id）遍历该节点的所有子节点，找出其中所有的 v-指令和" { {}} ".
 
 - （1）如果子节点含有 v-指令，即是元素节点，则对这个元素添加监听事件。（如果是 v-on，则 `node.addEventListener('click'）`，如果是 v-model，则 `node.addEventListener('input'))`。接着初始化模板元素，创建一个 Watcher 绑定这个元素节点。
-- （2）如果子节点是文本节点，即" {{ data }} ",则用正则表达式取出" {{ data }} "中的 data，然后 `var initText = this.vm[exp]`，用 initText 去替代其中的 data。
+- （2）如果子节点是文本节点，即" { { data }} ",则用正则表达式取出" { { data }} "中的 data，然后 `var initText = this.vm[exp]`，用 initText 去替代其中的 data。
 
 ## **实现一个 MVVM**
 
@@ -173,9 +173,9 @@ Compile 主要的作用是把 new SelfVue 绑定的 dom 节点，（也就是 el
  text-align: center;
  }</style><body>
  <div id="app">
- <h2>{{title}}</h2>
+ <h2>{ {title}}</h2>
  <input v-model="name">
- <h1>{{name}}</h1>
+ <h1>{ {name}}</h1>
  <button v-on:click="clickMe">click me!</button>
  </div></body><script src="js/observer.js"></script>
  <script src="js/watcher.js"></script>

@@ -24,7 +24,7 @@ var person = createPerson('mike', 18);
 
 这里打印 person 对象，可以看到有 2 个属性和 1 个方法，原型对象是 Obejct，constructor 属性（指向构造函数的指针）指向 Object 对象。
 
-![](../_resources/164699fb77df7373_tplv-t2oaga2asx_d568aa3e206a40288.webp)
+![](https://gitee.com/herrry/image-repository/raw/master/img/202203132207358.webp)
 
 ### 1.2 构造函数
 
@@ -45,7 +45,7 @@ Person.call(obj, 'mike', 18);
 复制代码
 ```
 
-![](../_resources/164699fff206deae_tplv-t2oaga2asx_9c9905c6fe664ebea.webp)
+![](https://gitee.com/herrry/image-repository/raw/master/img/202203132207417.webp)
 
 构造函数模式是比较常见的一种方式，通过大写函数名的第一个字母来用以区分普通函数。
 
@@ -64,7 +64,7 @@ Person.call(obj, 'mike', 18);
 
 构造函数解决了工厂模式不能识别实例类型的问题，但是也有一个缺点：在这个例子里它会多次创建了相同函数 sayName。
 
-![](../_resources/16469a0ecd3c0e45_tplv-t2oaga2asx_ccbd064b02ad4c798.webp)
+![](https://gitee.com/herrry/image-repository/raw/master/img/202203132207464.webp)
 
 ### 1.3 原型模式
 
@@ -89,19 +89,19 @@ person1.hobby.push('dancing'); // person2.hobby: ['football', 'singing','dancing
 
 constructor 指向未断裂的情况：指向了 Person
 
-![](../_resources/16469a12b067ea6c_tplv-t2oaga2asx_6cd289b7fad641a09.webp)
+![ ](https://gitee.com/herrry/image-repository/raw/master/img/202203132207519.webp)
 
 constructor 指向断裂的情况：失去了 constructor，默认指向了 Object
 
-![](../_resources/16469a18f5a4011f_tplv-t2oaga2asx_ff4ae1c7d30846a3a.webp)
+![](https://gitee.com/herrry/image-repository/raw/master/img/202203132207572.webp)
 
 原型链示意图：
 
-![](../_resources/16469a1aa659cba5_tplv-t2oaga2asx_ca5b7415883241cca.webp)
+![](https://gitee.com/herrry/image-repository/raw/master/img/202203132207631.webp)
 
 下图可见通过原型模式解决了构造函数模式多次创建了 sayName 方法的问题，但聪明的电视机前的你肯定发现了定义的原型属性会被所有的实例共享。
 
-![](../_resources/16469a7c3a611f12_tplv-t2oaga2asx_78672fe6bfab42ba8.webp)
+![](https://gitee.com/herrry/image-repository/raw/master/img/202203132207687.webp)
 
 当我们操作了 person1 的 hobby 对象的时候，person2 的也同时被修改了，这是我们不愿看到的。
 
@@ -126,7 +126,7 @@ var person2 = new Person('alice', 19);
 复制代码
 ```
 
-![](../_resources/16469a32f3494509_tplv-t2oaga2asx_11c20ac1f7904e7ca.webp)
+![](https://gitee.com/herrry/image-repository/raw/master/img/202203132207744.webp)
 
 通过以上的几种方式的分析，我们差不多也能得到比较好的一种模式了，那就是组合模式。
 
@@ -153,7 +153,7 @@ var person2 = new Person('alice', 19);
 复制代码
 ```
 
-![](../_resources/16469a4bc477e830_tplv-t2oaga2asx_faa93f4ed57a4496b.webp)
+![](https://gitee.com/herrry/image-repository/raw/master/img/202203132207800.webp)
 
 由此对比可见，和 ES5 的结果只有在 \_\_proto\_\_ 对象里的 constructor 显示的是 class，其余的部分都是一致。 通过 babel 编译成 ES5，我们进行一下对比。
 
@@ -473,7 +473,7 @@ const cat = new Cat('miao', 3);
 复制代码
 ```
 
-![](../_resources/16469a52c19f26bd_tplv-t2oaga2asx_944b5562fd6444b28.webp)
+![](https://gitee.com/herrry/image-repository/raw/master/img/202203132207856.webp)
 
 ## 总结
 

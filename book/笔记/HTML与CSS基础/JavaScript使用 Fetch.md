@@ -353,26 +353,10 @@ if(self.fetch) {
 } 
 ```
 
-[![  ](https://upload.jianshu.io/users/upload_avatars/54923/3002c91f-4fbd-4bd2-a921-39fa1b32dff5.jpg?imageMogr2/auto-orient/strip|imageView2/1/w/100/h/100/format/webp)](https://www.jianshu.com/u/6a87586ed87c)
 
-[wwmin_](https://www.jianshu.com/u/6a87586ed87c "wwmin_")[<img width="16" height="16" src="../_resources/19c2bea4-c7f7-467f-a032-4fed9acb_eb2f1d0f915147f28.png"/>](https://www.jianshu.com/mobile/creator)记录自己的路程。&lt;br&gt;多看，多想，多做。&lt;br&gt;做一名优秀软件工程师。&lt;br&gt;兴趣： .ne...
 
-总资产62共写了19.0W字获得5,814个赞共78个粉丝
+原文链接：https://www.cnblogs.com/libin-1/p/6853677.html 原文链接：...
 
-### 推荐阅读[更多精彩内容](https://www.jianshu.com/)
-
-- 前言 React Native可以使用多种方式来进行网络请求，比如fetch、XMLHttpRequest以及基于...
-    
-    [![](https://upload.jianshu.io/users/upload_avatars/1417629/7929f6bf-f5f9-45be-8eda-d7bbf1cba3e9.jpg?imageMogr2/auto-orient/strip|imageView2/1/w/48/h/48/format/webp)刘望舒](https://www.jianshu.com/u/5d38c81be78e)阅读 1,211评论 4赞 4
-    
-    [![](https://upload-images.jianshu.io/upload_images/1417629-4e4b3f1e696cf48c.jpg?imageMogr2/auto-orient/strip|imageView2/1/w/300/h/240/format/webp)](https://www.jianshu.com/p/1d185965dc4e)
-- 在 JS 中使用 fetch 更加高效地进行网络请求 在前端快速发展地过程中，为了契合更好的设计模式，产生了 fe...
-    
-    [<img width="24" height="24" src="../_resources/8-a356878e44b45ab268a3b0bbaaadee_3ffd759578e34ec48.jpg"/>德山_](https://www.jianshu.com/u/46898049a33f)阅读 555评论 0赞 1
-    
-    [![](https://upload-images.jianshu.io/upload_images/2023270-5004b2ce47bc9e45.png?imageMogr2/auto-orient/strip|imageView2/1/w/300/h/240/format/webp)](https://www.jianshu.com/p/7b0921072e18)
-- 原文链接：https://www.cnblogs.com/libin-1/p/6853677.html 原文链接：...
-    
 - 原文链接：https://www.cnblogs.com/libin-1/p/6853677.html 这个也看看...
-    
+  
 - 我们在项目中经常会用到HTTP请求来访问网络，HTTP(HTTPS)请求通常分为"GET"、"PUT"、"POST...

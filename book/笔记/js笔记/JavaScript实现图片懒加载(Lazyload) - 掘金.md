@@ -1,8 +1,4 @@
- 
 
-[<img width="40" height="40" src="../_resources/01566ebf4434b67ca0b0d1b39d084dfb_c8a22b07db194f1fa.jpg"/>](https://juejin.cn/user/1363829222028701)
-
-2021年09月30日 14:39 ·  阅读 176
 
 ## 为什么要使用懒加载
 
@@ -19,7 +15,7 @@
     - `src`要指向一张默认的图片，否则`src`为空时，也会向服务器发送一次请求，可以指向`loading`的地址；
     - 图片要指定宽高
 - 代码如下所示：
-    
+  
     ```
     <img src="default.jpg" data-src="http://ww4.sinaimg.cn/large/006y8mN6gw1fa5obmqrmvj305k05k3yh.jpg" />
     复制代码
@@ -132,14 +128,3 @@ window.addEventListener('scroll',throttle(lazyload,500,1000));
 
 [查看原文](https://juejin.cn/post/6844903455048335368)
 
-文章被收录于专栏：
-
-<img width="80" height="60" src="../_resources/2a77213d652b4a23bfb60714a2db00bd_e8a2e3db78e6418da.jpg"/>
-
-JavaScript
-
-JavaScript知识点整理
-
-![](../_resources/00ba359ecd0075e59ffbc3d810af551d_9c4afa00f2bf4496a.svg)  1
-
-![](../_resources/3d482c7a948bac826e155953b2a28a9e_fda9f7dc12ef49098.svg) 收藏
