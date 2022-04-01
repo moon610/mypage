@@ -1,0 +1,744 @@
+
+<!DOCTYPE HTML>
+<html lang="" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>Indexes - 索引 · notebook</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.3">
+        <meta name="author" content="月歌">
+        
+        
+    
+    <link rel="stylesheet" href="../gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-search-pro/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-chapter-fold/chapter-fold.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-expandable-chapters/expandable-chapters.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-splitter/splitter.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-anchor-navigation-ex/style/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-lightbox/css/lightbox.min.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-tbfed-pagefooter/footer.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-prism/prism-okaidia.css">
+                
+            
+        
+
+    
+
+    
+        
+        <link rel="stylesheet" href="../styles/website.css">
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="optimistic-locking.html" />
+    
+    
+    <link rel="prev" href="extending-data-types.html" />
+    
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="Type to search" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        <li class="header">核心概念</li>
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="../">
+            
+                <a href="../">
+            
+                    
+                    Introduction
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" data-path="../core-concepts/getting-started.html">
+            
+                <a href="../core-concepts/getting-started.html">
+            
+                    
+                    Getting Started - 入门
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3" data-path="../core-concepts/model-basics.html">
+            
+                <a href="../core-concepts/model-basics.html">
+            
+                    
+                    Model Basics - 模型基础
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4" data-path="../core-concepts/model-instances.html">
+            
+                <a href="../core-concepts/model-instances.html">
+            
+                    
+                    Model Instances - 模型实例
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5" data-path="../core-concepts/model-querying-basics.html">
+            
+                <a href="../core-concepts/model-querying-basics.html">
+            
+                    
+                    Model Querying - Basics - 模型查询(基础)
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6" data-path="../core-concepts/model-querying-finders.html">
+            
+                <a href="../core-concepts/model-querying-finders.html">
+            
+                    
+                    Model Querying - Finders - 模型查询(查找器)
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7" data-path="../core-concepts/getters-setters-virtuals.html">
+            
+                <a href="../core-concepts/getters-setters-virtuals.html">
+            
+                    
+                    Getters, Setters & Virtuals - 获取器, 设置器 & 虚拟字段
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8" data-path="../core-concepts/validations-and-constraints.html">
+            
+                <a href="../core-concepts/validations-and-constraints.html">
+            
+                    
+                    Validations & Constraints - 验证 & 约束
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9" data-path="../core-concepts/raw-queries.html">
+            
+                <a href="../core-concepts/raw-queries.html">
+            
+                    
+                    Raw Queries - 原始查询
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.10" data-path="../core-concepts/assocs.html">
+            
+                <a href="../core-concepts/assocs.html">
+            
+                    
+                    Associations - 关联
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.11" data-path="../core-concepts/paranoid.html">
+            
+                <a href="../core-concepts/paranoid.html">
+            
+                    
+                    Paranoid - 偏执表
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="header">高级关联概念</li>
+        
+        
+    
+        <li class="chapter " data-level="2.1" data-path="../advanced-association-concepts/eager-loading.html">
+            
+                <a href="../advanced-association-concepts/eager-loading.html">
+            
+                    
+                    Eager Loading - 预先加载
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.2" data-path="../advanced-association-concepts/creating-with-associations.html">
+            
+                <a href="../advanced-association-concepts/creating-with-associations.html">
+            
+                    
+                    Creating with Associations - 创建关联
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.3" data-path="../advanced-association-concepts/advanced-many-to-many.html">
+            
+                <a href="../advanced-association-concepts/advanced-many-to-many.html">
+            
+                    
+                    Advanced M:N Associations - 高级 M:N 关联
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.4" data-path="../advanced-association-concepts/association-scopes.html">
+            
+                <a href="../advanced-association-concepts/association-scopes.html">
+            
+                    
+                    Association Scopes - 关联作用域
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.5" data-path="../advanced-association-concepts/polymorphic-associations.html">
+            
+                <a href="../advanced-association-concepts/polymorphic-associations.html">
+            
+                    
+                    Polymorphic Associations - 多态关联
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="header">其它主题</li>
+        
+        
+    
+        <li class="chapter " data-level="3.1" data-path="dialect-specific-things.html">
+            
+                <a href="dialect-specific-things.html">
+            
+                    
+                    Dialect-Specific Things - 方言特定事项
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.2" data-path="transactions.html">
+            
+                <a href="transactions.html">
+            
+                    
+                    Transactions - 事务
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.3" data-path="hooks.html">
+            
+                <a href="hooks.html">
+            
+                    
+                    Hooks - 钩子
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.4" data-path="query-interface.html">
+            
+                <a href="query-interface.html">
+            
+                    
+                    Query Interface - 查询接口
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.5" data-path="naming-strategies.html">
+            
+                <a href="naming-strategies.html">
+            
+                    
+                    Naming Strategies - 命名策略
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.6" data-path="scopes.html">
+            
+                <a href="scopes.html">
+            
+                    
+                    Scopes - 作用域
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.7" data-path="sub-queries.html">
+            
+                <a href="sub-queries.html">
+            
+                    
+                    Sub Queries - 子查询
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.8" data-path="other-data-types.html">
+            
+                <a href="other-data-types.html">
+            
+                    
+                    Other Data Types - 其他数据类型
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.9" data-path="constraints-and-circularities.html">
+            
+                <a href="constraints-and-circularities.html">
+            
+                    
+                    Constraints & Circularities - 约束 & 循环
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.10" data-path="extending-data-types.html">
+            
+                <a href="extending-data-types.html">
+            
+                    
+                    Extending Data Types - 扩展数据类型
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="3.11" data-path="indexes.html">
+            
+                <a href="indexes.html">
+            
+                    
+                    Indexes - 索引
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.12" data-path="optimistic-locking.html">
+            
+                <a href="optimistic-locking.html">
+            
+                    
+                    Optimistic Locking - 乐观锁定
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.13" data-path="read-replication.html">
+            
+                <a href="read-replication.html">
+            
+                    
+                    Read Replication - 读取复制
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.14" data-path="connection-pool.html">
+            
+                <a href="connection-pool.html">
+            
+                    
+                    Connection Pool - 连接池
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.15" data-path="legacy.html">
+            
+                <a href="legacy.html">
+            
+                    
+                    Working with Legacy Tables - 使用遗留表
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.16" data-path="migrations.html">
+            
+                <a href="migrations.html">
+            
+                    
+                    Migrations - 迁移
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.17" data-path="typescript.html">
+            
+                <a href="typescript.html">
+            
+                    
+                    TypeScript
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.18" data-path="resources.html">
+            
+                <a href="resources.html">
+            
+                    
+                    Resources - 资源
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            Published with GitBook
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href=".." >Indexes - 索引</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <div id="anchor-navigation-ex-navbar"><i class="fa fa-navicon"></i><ul><li><span class="title-icon "></span><a href="#indexes---&#x7D22;&#x5F15;"><b></b>Indexes - &#x7D22;&#x5F15;</a></li></ul></div><a href="#indexes---&#x7D22;&#x5F15;" id="anchorNavigationExGoTop"><i class="fa fa-arrow-up"></i></a><h1 id="indexes---&#x7D22;&#x5F15;"><a name="indexes---&#x7D22;&#x5F15;" class="anchor-navigation-ex-anchor" href="#indexes---&#x7D22;&#x5F15;"><i class="fa fa-link" aria-hidden="true"></i></a>Indexes - &#x7D22;&#x5F15;</h1>
+<p>Sequelize &#x652F;&#x6301;&#x5728;&#x6A21;&#x578B;&#x5B9A;&#x4E49;&#x4E0A;&#x6DFB;&#x52A0;&#x7D22;&#x5F15;,&#x8BE5;&#x7D22;&#x5F15;&#x5C06;&#x5728; <a href="https://sequelize.org/master/class/lib/sequelize.js~Sequelize.html#instance-method-sync" target="_blank"><code>sequelize.sync()</code></a> &#x4E0A;&#x521B;&#x5EFA;</p>
+<pre class="language-"><code class="lang-js"><span class="token keyword">const</span> User <span class="token operator">=</span> sequelize<span class="token punctuation">.</span><span class="token function">define</span><span class="token punctuation">(</span><span class="token string">&apos;User&apos;</span><span class="token punctuation">,</span> <span class="token punctuation">{</span> <span class="token comment">/* &#x5C5E;&#x6027; */</span> <span class="token punctuation">}</span><span class="token punctuation">,</span> <span class="token punctuation">{</span>
+  <span class="token literal-property property">indexes</span><span class="token operator">:</span> <span class="token punctuation">[</span>
+    <span class="token comment">// &#x5728; email &#x4E0A;&#x521B;&#x5EFA;&#x552F;&#x4E00;&#x7D22;&#x5F15;</span>
+    <span class="token punctuation">{</span>
+      <span class="token literal-property property">unique</span><span class="token operator">:</span> <span class="token boolean">true</span><span class="token punctuation">,</span>
+      <span class="token literal-property property">fields</span><span class="token operator">:</span> <span class="token punctuation">[</span><span class="token string">&apos;email&apos;</span><span class="token punctuation">]</span>
+    <span class="token punctuation">}</span><span class="token punctuation">,</span>
+
+    <span class="token comment">// &#x4F7F;&#x7528; jsonb_path_ops &#x8FD0;&#x7B97;&#x7B26;&#x5728; data &#x4E0A;&#x521B;&#x5EFA; gin &#x7D22;&#x5F15;</span>
+    <span class="token punctuation">{</span>
+      <span class="token literal-property property">fields</span><span class="token operator">:</span> <span class="token punctuation">[</span><span class="token string">&apos;data&apos;</span><span class="token punctuation">]</span><span class="token punctuation">,</span>
+      <span class="token literal-property property">using</span><span class="token operator">:</span> <span class="token string">&apos;gin&apos;</span><span class="token punctuation">,</span>
+      <span class="token literal-property property">operator</span><span class="token operator">:</span> <span class="token string">&apos;jsonb_path_ops&apos;</span>
+    <span class="token punctuation">}</span><span class="token punctuation">,</span>
+
+    <span class="token comment">// &#x9ED8;&#x8BA4;&#x60C5;&#x51B5;&#x4E0B;,&#x7D22;&#x5F15;&#x540D;&#x79F0;&#x5C06;&#x4E3A; [table]_[fields]</span>
+    <span class="token comment">// &#x521B;&#x5EFA;&#x591A;&#x5217;&#x90E8;&#x5206;&#x7D22;&#x5F15;</span>
+    <span class="token punctuation">{</span>
+      <span class="token literal-property property">name</span><span class="token operator">:</span> <span class="token string">&apos;public_by_author&apos;</span><span class="token punctuation">,</span>
+      <span class="token literal-property property">fields</span><span class="token operator">:</span> <span class="token punctuation">[</span><span class="token string">&apos;author&apos;</span><span class="token punctuation">,</span> <span class="token string">&apos;status&apos;</span><span class="token punctuation">]</span><span class="token punctuation">,</span>
+      <span class="token literal-property property">where</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+        <span class="token literal-property property">status</span><span class="token operator">:</span> <span class="token string">&apos;public&apos;</span>
+      <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span><span class="token punctuation">,</span>
+
+    <span class="token comment">// &#x5177;&#x6709; order &#x5B57;&#x6BB5;&#x7684; BTREE &#x7D22;&#x5F15;</span>
+    <span class="token punctuation">{</span>
+      <span class="token literal-property property">name</span><span class="token operator">:</span> <span class="token string">&apos;title_index&apos;</span><span class="token punctuation">,</span>
+      <span class="token literal-property property">using</span><span class="token operator">:</span> <span class="token string">&apos;BTREE&apos;</span><span class="token punctuation">,</span>
+      <span class="token literal-property property">fields</span><span class="token operator">:</span> <span class="token punctuation">[</span>
+        <span class="token string">&apos;author&apos;</span><span class="token punctuation">,</span>
+        <span class="token punctuation">{</span>
+          <span class="token literal-property property">name</span><span class="token operator">:</span> <span class="token string">&apos;title&apos;</span><span class="token punctuation">,</span>
+          <span class="token literal-property property">collate</span><span class="token operator">:</span> <span class="token string">&apos;en_US&apos;</span><span class="token punctuation">,</span>
+          <span class="token literal-property property">order</span><span class="token operator">:</span> <span class="token string">&apos;DESC&apos;</span><span class="token punctuation">,</span>
+          <span class="token literal-property property">length</span><span class="token operator">:</span> <span class="token number">5</span>
+        <span class="token punctuation">}</span>
+      <span class="token punctuation">]</span>
+    <span class="token punctuation">}</span>
+  <span class="token punctuation">]</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre>
+<footer class="page-footer"><span class="copyright">&#x6708;&#x660E; all right reserved&#xFF0C;powered by Gitbook</span><span class="footer-modification">&#x8BE5;&#x6587;&#x4EF6;&#x6700;&#x540E;&#x4FEE;&#x6539;&#x65F6;&#x95F4;&#xFF1A;
+2022-03-25 18:10:52
+</span></footer>
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="extending-data-types.html" class="navigation navigation-prev " aria-label="Previous page: Extending Data Types - 扩展数据类型">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="optimistic-locking.html" class="navigation navigation-next " aria-label="Next page: Optimistic Locking - 乐观锁定">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"Indexes - 索引","level":"3.11","depth":1,"next":{"title":"Optimistic Locking - 乐观锁定","level":"3.12","depth":1,"path":"other-topics/optimistic-locking.md","ref":"other-topics/optimistic-locking.md","articles":[]},"previous":{"title":"Extending Data Types - 扩展数据类型","level":"3.10","depth":1,"path":"other-topics/extending-data-types.md","ref":"other-topics/extending-data-types.md","articles":[]},"dir":"ltr"},"config":{"plugins":["-lunr","-search","-highlight","-livereload","-sharing","-fontsettings","search-pro","chapter-fold","expandable-chapters","splitter","anchor-navigation-ex","lightbox","tbfed-pagefooter","hide-element","prism","copy-code-button","editlink"],"root":"/doc","styles":{"website":"styles/website.css"},"pluginsConfig":{"tbfed-pagefooter":{"copyright":"月明","modify_label":"该文件最后修改时间：","modify_format":"YYYY-MM-DD HH:mm:ss"},"chapter-fold":{},"prism":{"css":["prismjs/themes/prism-okaidia.css"],"ignore":["null","undefined","vue","HTML","clang","cmd","tex","mysql"]},"editlink":{"label":"Edit This Page","multilingual":false,"base":"https://github.com/moon610"},"splitter":{},"search-pro":{},"hide-element":{"elements":[".gitbook-link"]},"anchor-navigation-ex":{"associatedWithSummary":true,"float":{"floatIcon":"fa fa-navicon","level1Icon":"","level2Icon":"","level3Icon":"","showLevelIcon":false},"mode":"float","multipleH1":true,"pageTop":{"level1Icon":"","level2Icon":"","level3Icon":"","showLevelIcon":false},"printLog":true,"showGoTop":true,"showLevel":false},"lightbox":{"jquery":true,"sameUuid":false},"copy-code-button":{},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"expandable-chapters":{}},"theme":"default","author":"月歌","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"notebook","gitbook":"3.2.3","description":"记录学习和生活"},"file":{"path":"other-topics/indexes.md","mtime":"2022-03-25T10:10:52.069Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2022-03-25T10:43:32.004Z"},"basePath":"..","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="../gitbook/gitbook.js"></script>
+    <script src="../gitbook/theme.js"></script>
+    
+        
+        <script src="../gitbook/gitbook-plugin-search-pro/jquery.mark.min.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search-pro/search.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-chapter-fold/chapter-fold.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-expandable-chapters/expandable-chapters.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-splitter/splitter.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lightbox/js/lightbox.min.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-hide-element/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-copy-code-button/toggle.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-editlink/plugin.js"></script>
+        
+    
+
+    </body>
+</html>
+

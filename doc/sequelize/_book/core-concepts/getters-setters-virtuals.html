@@ -1,0 +1,855 @@
+
+<!DOCTYPE HTML>
+<html lang="" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>Getters, Setters & Virtuals - 获取器, 设置器 & 虚拟字段 · notebook</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.3">
+        <meta name="author" content="月歌">
+        
+        
+    
+    <link rel="stylesheet" href="../gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-search-pro/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-chapter-fold/chapter-fold.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-expandable-chapters/expandable-chapters.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-splitter/splitter.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-anchor-navigation-ex/style/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-lightbox/css/lightbox.min.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-tbfed-pagefooter/footer.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-prism/prism-okaidia.css">
+                
+            
+        
+
+    
+
+    
+        
+        <link rel="stylesheet" href="../styles/website.css">
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="validations-and-constraints.html" />
+    
+    
+    <link rel="prev" href="model-querying-finders.html" />
+    
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="Type to search" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        <li class="header">核心概念</li>
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="../">
+            
+                <a href="../">
+            
+                    
+                    Introduction
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" data-path="getting-started.html">
+            
+                <a href="getting-started.html">
+            
+                    
+                    Getting Started - 入门
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3" data-path="model-basics.html">
+            
+                <a href="model-basics.html">
+            
+                    
+                    Model Basics - 模型基础
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4" data-path="model-instances.html">
+            
+                <a href="model-instances.html">
+            
+                    
+                    Model Instances - 模型实例
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5" data-path="model-querying-basics.html">
+            
+                <a href="model-querying-basics.html">
+            
+                    
+                    Model Querying - Basics - 模型查询(基础)
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6" data-path="model-querying-finders.html">
+            
+                <a href="model-querying-finders.html">
+            
+                    
+                    Model Querying - Finders - 模型查询(查找器)
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="1.7" data-path="getters-setters-virtuals.html">
+            
+                <a href="getters-setters-virtuals.html">
+            
+                    
+                    Getters, Setters & Virtuals - 获取器, 设置器 & 虚拟字段
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8" data-path="validations-and-constraints.html">
+            
+                <a href="validations-and-constraints.html">
+            
+                    
+                    Validations & Constraints - 验证 & 约束
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9" data-path="raw-queries.html">
+            
+                <a href="raw-queries.html">
+            
+                    
+                    Raw Queries - 原始查询
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.10" data-path="assocs.html">
+            
+                <a href="assocs.html">
+            
+                    
+                    Associations - 关联
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.11" data-path="paranoid.html">
+            
+                <a href="paranoid.html">
+            
+                    
+                    Paranoid - 偏执表
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="header">高级关联概念</li>
+        
+        
+    
+        <li class="chapter " data-level="2.1" data-path="../advanced-association-concepts/eager-loading.html">
+            
+                <a href="../advanced-association-concepts/eager-loading.html">
+            
+                    
+                    Eager Loading - 预先加载
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.2" data-path="../advanced-association-concepts/creating-with-associations.html">
+            
+                <a href="../advanced-association-concepts/creating-with-associations.html">
+            
+                    
+                    Creating with Associations - 创建关联
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.3" data-path="../advanced-association-concepts/advanced-many-to-many.html">
+            
+                <a href="../advanced-association-concepts/advanced-many-to-many.html">
+            
+                    
+                    Advanced M:N Associations - 高级 M:N 关联
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.4" data-path="../advanced-association-concepts/association-scopes.html">
+            
+                <a href="../advanced-association-concepts/association-scopes.html">
+            
+                    
+                    Association Scopes - 关联作用域
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.5" data-path="../advanced-association-concepts/polymorphic-associations.html">
+            
+                <a href="../advanced-association-concepts/polymorphic-associations.html">
+            
+                    
+                    Polymorphic Associations - 多态关联
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="header">其它主题</li>
+        
+        
+    
+        <li class="chapter " data-level="3.1" data-path="../other-topics/dialect-specific-things.html">
+            
+                <a href="../other-topics/dialect-specific-things.html">
+            
+                    
+                    Dialect-Specific Things - 方言特定事项
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.2" data-path="../other-topics/transactions.html">
+            
+                <a href="../other-topics/transactions.html">
+            
+                    
+                    Transactions - 事务
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.3" data-path="../other-topics/hooks.html">
+            
+                <a href="../other-topics/hooks.html">
+            
+                    
+                    Hooks - 钩子
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.4" data-path="../other-topics/query-interface.html">
+            
+                <a href="../other-topics/query-interface.html">
+            
+                    
+                    Query Interface - 查询接口
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.5" data-path="../other-topics/naming-strategies.html">
+            
+                <a href="../other-topics/naming-strategies.html">
+            
+                    
+                    Naming Strategies - 命名策略
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.6" data-path="../other-topics/scopes.html">
+            
+                <a href="../other-topics/scopes.html">
+            
+                    
+                    Scopes - 作用域
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.7" data-path="../other-topics/sub-queries.html">
+            
+                <a href="../other-topics/sub-queries.html">
+            
+                    
+                    Sub Queries - 子查询
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.8" data-path="../other-topics/other-data-types.html">
+            
+                <a href="../other-topics/other-data-types.html">
+            
+                    
+                    Other Data Types - 其他数据类型
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.9" data-path="../other-topics/constraints-and-circularities.html">
+            
+                <a href="../other-topics/constraints-and-circularities.html">
+            
+                    
+                    Constraints & Circularities - 约束 & 循环
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.10" data-path="../other-topics/extending-data-types.html">
+            
+                <a href="../other-topics/extending-data-types.html">
+            
+                    
+                    Extending Data Types - 扩展数据类型
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.11" data-path="../other-topics/indexes.html">
+            
+                <a href="../other-topics/indexes.html">
+            
+                    
+                    Indexes - 索引
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.12" data-path="../other-topics/optimistic-locking.html">
+            
+                <a href="../other-topics/optimistic-locking.html">
+            
+                    
+                    Optimistic Locking - 乐观锁定
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.13" data-path="../other-topics/read-replication.html">
+            
+                <a href="../other-topics/read-replication.html">
+            
+                    
+                    Read Replication - 读取复制
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.14" data-path="../other-topics/connection-pool.html">
+            
+                <a href="../other-topics/connection-pool.html">
+            
+                    
+                    Connection Pool - 连接池
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.15" data-path="../other-topics/legacy.html">
+            
+                <a href="../other-topics/legacy.html">
+            
+                    
+                    Working with Legacy Tables - 使用遗留表
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.16" data-path="../other-topics/migrations.html">
+            
+                <a href="../other-topics/migrations.html">
+            
+                    
+                    Migrations - 迁移
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.17" data-path="../other-topics/typescript.html">
+            
+                <a href="../other-topics/typescript.html">
+            
+                    
+                    TypeScript
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.18" data-path="../other-topics/resources.html">
+            
+                <a href="../other-topics/resources.html">
+            
+                    
+                    Resources - 资源
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            Published with GitBook
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href=".." >Getters, Setters & Virtuals - 获取器, 设置器 & 虚拟字段</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <div id="anchor-navigation-ex-navbar"><i class="fa fa-navicon"></i><ul><li><span class="title-icon "></span><a href="#getters-setters--virtuals---&#x83B7;&#x53D6;&#x5668;-&#x8BBE;&#x7F6E;&#x5668;--&#x865A;&#x62DF;&#x5B57;&#x6BB5;"><b></b>Getters, Setters &amp; Virtuals - &#x83B7;&#x53D6;&#x5668;, &#x8BBE;&#x7F6E;&#x5668; &amp; &#x865A;&#x62DF;&#x5B57;&#x6BB5;</a></li><ul><li><span class="title-icon "></span><a href="#&#x83B7;&#x53D6;&#x5668;"><b></b>&#x83B7;&#x53D6;&#x5668;</a></li><li><span class="title-icon "></span><a href="#&#x8BBE;&#x7F6E;&#x5668;"><b></b>&#x8BBE;&#x7F6E;&#x5668;</a></li><li><span class="title-icon "></span><a href="#&#x7EC4;&#x5408;&#x83B7;&#x53D6;&#x5668;&#x548C;&#x8BBE;&#x7F6E;&#x5668;"><b></b>&#x7EC4;&#x5408;&#x83B7;&#x53D6;&#x5668;&#x548C;&#x8BBE;&#x7F6E;&#x5668;</a></li><li><span class="title-icon "></span><a href="#&#x865A;&#x62DF;&#x5B57;&#x6BB5;"><b></b>&#x865A;&#x62DF;&#x5B57;&#x6BB5;</a></li><li><span class="title-icon "></span><a href="#&#x5728;-sequelize-v7-&#x4E2D;&#x5DF2;&#x5F03;&#x7528;&#xFF1A;gettermethods-&#x548C;-settermethods"><b></b>&#x5728; Sequelize v7 &#x4E2D;&#x5DF2;&#x5F03;&#x7528;&#xFF1A;getterMethods &#x548C; setterMethods</a></li></ul></ul></div><a href="#getters-setters--virtuals---&#x83B7;&#x53D6;&#x5668;-&#x8BBE;&#x7F6E;&#x5668;--&#x865A;&#x62DF;&#x5B57;&#x6BB5;" id="anchorNavigationExGoTop"><i class="fa fa-arrow-up"></i></a><h1 id="getters-setters--virtuals---&#x83B7;&#x53D6;&#x5668;-&#x8BBE;&#x7F6E;&#x5668;--&#x865A;&#x62DF;&#x5B57;&#x6BB5;"><a name="getters-setters--virtuals---&#x83B7;&#x53D6;&#x5668;-&#x8BBE;&#x7F6E;&#x5668;--&#x865A;&#x62DF;&#x5B57;&#x6BB5;" class="anchor-navigation-ex-anchor" href="#getters-setters--virtuals---&#x83B7;&#x53D6;&#x5668;-&#x8BBE;&#x7F6E;&#x5668;--&#x865A;&#x62DF;&#x5B57;&#x6BB5;"><i class="fa fa-link" aria-hidden="true"></i></a>Getters, Setters &amp; Virtuals - &#x83B7;&#x53D6;&#x5668;, &#x8BBE;&#x7F6E;&#x5668; &amp; &#x865A;&#x62DF;&#x5B57;&#x6BB5;</h1>
+<p>Sequelize &#x5141;&#x8BB8;&#x4F60;&#x4E3A;&#x6A21;&#x578B;&#x7684;&#x5C5E;&#x6027;&#x5B9A;&#x4E49;&#x81EA;&#x5B9A;&#x4E49;&#x83B7;&#x53D6;&#x5668;&#x548C;&#x8BBE;&#x7F6E;&#x5668;.</p>
+<p>Sequelize &#x8FD8;&#x5141;&#x8BB8;&#x4F60;&#x6307;&#x5B9A;&#x6240;&#x8C13;&#x7684; <em>&#x865A;&#x62DF;&#x5C5E;&#x6027;</em>,&#x5B83;&#x4EEC;&#x662F; Sequelize &#x6A21;&#x578B;&#x4E0A;&#x7684;&#x5C5E;&#x6027;,&#x8FD9;&#x4E9B;&#x5C5E;&#x6027;&#x5728;&#x57FA;&#x7840; SQL &#x8868;&#x4E2D;&#x5B9E;&#x9645;&#x4E0A;&#x5E76;&#x4E0D;&#x5B58;&#x5728;,&#x800C;&#x662F;&#x7531; Sequelize &#x81EA;&#x52A8;&#x586B;&#x5145;. &#x5B83;&#x4EEC;&#x5BF9;&#x4E8E;&#x521B;&#x5EFA;&#x81EA;&#x5B9A;&#x4E49;&#x5C5E;&#x6027;&#x975E;&#x5E38;&#x6709;&#x7528;, &#x8FD9;&#x4E5F;&#x53EF;&#x4EE5;&#x7B80;&#x5316;&#x60A8;&#x7684;&#x4EE3;&#x7801;.</p>
+<h2 id="&#x83B7;&#x53D6;&#x5668;"><a name="&#x83B7;&#x53D6;&#x5668;" class="anchor-navigation-ex-anchor" href="#&#x83B7;&#x53D6;&#x5668;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x83B7;&#x53D6;&#x5668;</h2>
+<p>&#x83B7;&#x53D6;&#x5668;&#x662F;&#x4E3A;&#x6A21;&#x578B;&#x5B9A;&#x4E49;&#x4E2D;&#x7684;&#x4E00;&#x5217;&#x5B9A;&#x4E49;&#x7684; <code>get()</code> &#x51FD;&#x6570;&#xFF1A;</p>
+<pre class="language-"><code class="lang-js"><span class="token keyword">const</span> User <span class="token operator">=</span> sequelize<span class="token punctuation">.</span><span class="token function">define</span><span class="token punctuation">(</span><span class="token string">&apos;user&apos;</span><span class="token punctuation">,</span> <span class="token punctuation">{</span>
+  <span class="token comment">// &#x5047;&#x8BBE;&#x6211;&#x4EEC;&#x60F3;&#x8981;&#x4EE5;&#x5927;&#x5199;&#x5F62;&#x5F0F;&#x67E5;&#x770B;&#x6BCF;&#x4E2A;&#x7528;&#x6237;&#x540D;,</span>
+  <span class="token comment">// &#x5373;&#x4F7F;&#x5B83;&#x4EEC;&#x5728;&#x6570;&#x636E;&#x5E93;&#x672C;&#x8EAB;&#x4E2D;&#x4E0D;&#x4E00;&#x5B9A;&#x662F;&#x5927;&#x5199;&#x7684;</span>
+  <span class="token literal-property property">username</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+    <span class="token literal-property property">type</span><span class="token operator">:</span> DataTypes<span class="token punctuation">.</span><span class="token constant">STRING</span><span class="token punctuation">,</span>
+    <span class="token function">get</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      <span class="token keyword">const</span> rawValue <span class="token operator">=</span> <span class="token keyword">this</span><span class="token punctuation">.</span><span class="token function">getDataValue</span><span class="token punctuation">(</span><span class="token string">&apos;username&apos;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+      <span class="token keyword">return</span> rawValue <span class="token operator">?</span> rawValue<span class="token punctuation">.</span><span class="token function">toUpperCase</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">:</span> <span class="token keyword">null</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre>
+<p>&#x5C31;&#x50CF;&#x6807;&#x51C6; JavaScript &#x83B7;&#x53D6;&#x5668;&#x4E00;&#x6837;,&#x5728;&#x8BFB;&#x53D6;&#x5B57;&#x6BB5;&#x503C;&#x65F6;&#x4F1A;&#x81EA;&#x52A8;&#x8C03;&#x7528;&#x6B64;&#x83B7;&#x53D6;&#x5668;&#xFF1A;</p>
+<pre class="language-"><code class="lang-js"><span class="token keyword">const</span> user <span class="token operator">=</span> User<span class="token punctuation">.</span><span class="token function">build</span><span class="token punctuation">(</span><span class="token punctuation">{</span> <span class="token literal-property property">username</span><span class="token operator">:</span> <span class="token string">&apos;SuperUser123&apos;</span> <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>user<span class="token punctuation">.</span>username<span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// &apos;SUPERUSER123&apos;</span>
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>user<span class="token punctuation">.</span><span class="token function">getDataValue</span><span class="token punctuation">(</span><span class="token string">&apos;username&apos;</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// &apos;SuperUser123&apos;</span>
+</code></pre>
+<p>&#x6CE8;&#x610F;,&#x5C3D;&#x7BA1;&#x4E0A;&#x9762;&#x8BB0;&#x5F55;&#x4E3A; <code>SUPERUSER123</code>,&#x4F46;&#x662F;&#x771F;&#x6B63;&#x5B58;&#x50A8;&#x5728;&#x6570;&#x636E;&#x5E93;&#x4E2D;&#x7684;&#x503C;&#x4ECD;&#x7136;&#x662F; <code>SuperUser123</code>. &#x6211;&#x4EEC;&#x4F7F;&#x7528;&#x4E86; <code>this.getDataValue(&apos;username&apos;)</code> &#x6765;&#x83B7;&#x5F97;&#x8BE5;&#x503C;,&#x5E76;&#x5C06;&#x5176;&#x8F6C;&#x6362;&#x4E3A;&#x5927;&#x5199;.</p>
+<p>&#x5982;&#x679C;&#x6211;&#x4EEC;&#x5C1D;&#x8BD5;&#x5728;&#x83B7;&#x53D6;&#x5668;&#x4E2D;&#x4F7F;&#x7528; <code>this.username</code>,&#x6211;&#x4EEC;&#x5C06;&#x9677;&#x5165;&#x65E0;&#x9650;&#x5FAA;&#x73AF;&#xFF01; &#x8FD9;&#x5C31;&#x662F;&#x4E3A;&#x4EC0;&#x4E48; Sequelize &#x63D0;&#x4F9B; <code>getDataValue</code> &#x65B9;&#x6CD5;&#x7684;&#x539F;&#x56E0;.</p>
+<h2 id="&#x8BBE;&#x7F6E;&#x5668;"><a name="&#x8BBE;&#x7F6E;&#x5668;" class="anchor-navigation-ex-anchor" href="#&#x8BBE;&#x7F6E;&#x5668;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x8BBE;&#x7F6E;&#x5668;</h2>
+<p>&#x8BBE;&#x7F6E;&#x5668;&#x662F;&#x4E3A;&#x6A21;&#x578B;&#x5B9A;&#x4E49;&#x4E2D;&#x7684;&#x4E00;&#x5217;&#x5B9A;&#x4E49;&#x7684; <code>set()</code> &#x51FD;&#x6570;. &#x5B83;&#x63A5;&#x6536;&#x8981;&#x8BBE;&#x7F6E;&#x7684;&#x503C;&#xFF1A;</p>
+<pre class="language-"><code class="lang-js"><span class="token keyword">const</span> User <span class="token operator">=</span> sequelize<span class="token punctuation">.</span><span class="token function">define</span><span class="token punctuation">(</span><span class="token string">&apos;user&apos;</span><span class="token punctuation">,</span> <span class="token punctuation">{</span>
+  <span class="token literal-property property">username</span><span class="token operator">:</span> DataTypes<span class="token punctuation">.</span><span class="token constant">STRING</span><span class="token punctuation">,</span>
+  <span class="token literal-property property">password</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+    <span class="token literal-property property">type</span><span class="token operator">:</span> DataTypes<span class="token punctuation">.</span><span class="token constant">STRING</span><span class="token punctuation">,</span>
+    <span class="token function">set</span><span class="token punctuation">(</span>value<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      <span class="token comment">// &#x5728;&#x6570;&#x636E;&#x5E93;&#x4E2D;&#x4EE5;&#x660E;&#x6587;&#x5F62;&#x5F0F;&#x5B58;&#x50A8;&#x5BC6;&#x7801;&#x662F;&#x5F88;&#x7CDF;&#x7CD5;&#x7684;.</span>
+      <span class="token comment">// &#x4F7F;&#x7528;&#x9002;&#x5F53;&#x7684;&#x54C8;&#x5E0C;&#x51FD;&#x6570;&#x6765;&#x52A0;&#x5BC6;&#x54C8;&#x5E0C;&#x503C;&#x66F4;&#x597D;.</span>
+      <span class="token keyword">this</span><span class="token punctuation">.</span><span class="token function">setDataValue</span><span class="token punctuation">(</span><span class="token string">&apos;password&apos;</span><span class="token punctuation">,</span> <span class="token function">hash</span><span class="token punctuation">(</span>value<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre>
+<pre class="language-"><code class="lang-js"><span class="token keyword">const</span> user <span class="token operator">=</span> User<span class="token punctuation">.</span><span class="token function">build</span><span class="token punctuation">(</span><span class="token punctuation">{</span> <span class="token literal-property property">username</span><span class="token operator">:</span> <span class="token string">&apos;someone&apos;</span><span class="token punctuation">,</span> <span class="token literal-property property">password</span><span class="token operator">:</span> <span class="token string">&apos;NotSo&#xA7;tr0ngP4$SW0RD!&apos;</span> <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>user<span class="token punctuation">.</span>password<span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// &apos;7cfc84b8ea898bb72462e78b4643cfccd77e9f05678ec2ce78754147ba947acc&apos;</span>
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>user<span class="token punctuation">.</span><span class="token function">getDataValue</span><span class="token punctuation">(</span><span class="token string">&apos;password&apos;</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// &apos;7cfc84b8ea898bb72462e78b4643cfccd77e9f05678ec2ce78754147ba947acc&apos;</span>
+</code></pre>
+<p>Sequelize &#x5728;&#x5C06;&#x6570;&#x636E;&#x53D1;&#x9001;&#x5230;&#x6570;&#x636E;&#x5E93;&#x4E4B;&#x524D;&#x81EA;&#x52A8;&#x8C03;&#x7528;&#x4E86;&#x8BBE;&#x7F6E;&#x5668;. &#x6570;&#x636E;&#x5E93;&#x5F97;&#x5230;&#x7684;&#x552F;&#x4E00;&#x6570;&#x636E;&#x662F;&#x5DF2;&#x7ECF;&#x6563;&#x5217;&#x8FC7;&#x7684;&#x503C;.</p>
+<p>&#x5982;&#x679C;&#x6211;&#x4EEC;&#x60F3;&#x5C06;&#x6A21;&#x578B;&#x5B9E;&#x4F8B;&#x4E2D;&#x7684;&#x53E6;&#x4E00;&#x4E2A;&#x5B57;&#x6BB5;&#x5305;&#x542B;&#x5728;&#x8BA1;&#x7B97;&#x4E2D;,&#x90A3;&#x4E5F;&#x662F;&#x53EF;&#x4EE5;&#x7684;,&#x800C;&#x4E14;&#x975E;&#x5E38;&#x5BB9;&#x6613;&#xFF01;</p>
+<pre class="language-"><code class="lang-js"><span class="token keyword">const</span> User <span class="token operator">=</span> sequelize<span class="token punctuation">.</span><span class="token function">define</span><span class="token punctuation">(</span><span class="token string">&apos;user&apos;</span><span class="token punctuation">,</span> <span class="token punctuation">{</span>
+  <span class="token literal-property property">username</span><span class="token operator">:</span> DataTypes<span class="token punctuation">.</span><span class="token constant">STRING</span><span class="token punctuation">,</span>
+  <span class="token literal-property property">password</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+    <span class="token literal-property property">type</span><span class="token operator">:</span> DataTypes<span class="token punctuation">.</span><span class="token constant">STRING</span><span class="token punctuation">,</span>
+    <span class="token function">set</span><span class="token punctuation">(</span>value<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      <span class="token comment">// &#x5728;&#x6570;&#x636E;&#x5E93;&#x4E2D;&#x4EE5;&#x660E;&#x6587;&#x5F62;&#x5F0F;&#x5B58;&#x50A8;&#x5BC6;&#x7801;&#x662F;&#x5F88;&#x7CDF;&#x7CD5;&#x7684;.</span>
+      <span class="token comment">// &#x4F7F;&#x7528;&#x9002;&#x5F53;&#x7684;&#x54C8;&#x5E0C;&#x51FD;&#x6570;&#x6765;&#x52A0;&#x5BC6;&#x54C8;&#x5E0C;&#x503C;&#x66F4;&#x597D;.</span>
+      <span class="token comment">// &#x4F7F;&#x7528;&#x7528;&#x6237;&#x540D;&#x4F5C;&#x4E3A;&#x76D0;&#x66F4;&#x597D;.</span>
+      <span class="token keyword">this</span><span class="token punctuation">.</span><span class="token function">setDataValue</span><span class="token punctuation">(</span><span class="token string">&apos;password&apos;</span><span class="token punctuation">,</span> <span class="token function">hash</span><span class="token punctuation">(</span><span class="token keyword">this</span><span class="token punctuation">.</span>username <span class="token operator">+</span> value<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre>
+<p><strong>&#x6CE8;&#x610F;&#xFF1A;</strong> &#x4E0A;&#x9762;&#x6D89;&#x53CA;&#x5BC6;&#x7801;&#x5904;&#x7406;&#x7684;&#x793A;&#x4F8B;&#x5C3D;&#x7BA1;&#x6BD4;&#x5355;&#x7EAF;&#x4EE5;&#x660E;&#x6587;&#x5F62;&#x5F0F;&#x5B58;&#x50A8;&#x5BC6;&#x7801;&#x8981;&#x597D;&#x5F97;&#x591A;,&#x4F46;&#x8FDC;&#x975E;&#x5B8C;&#x7F8E;&#x7684;&#x5B89;&#x5168;&#x6027;. &#x6B63;&#x786E;&#x5904;&#x7406;&#x5BC6;&#x7801;&#x5F88;&#x56F0;&#x96BE;,&#x8FD9;&#x91CC;&#x7684;&#x6240;&#x6709;&#x5185;&#x5BB9;&#x53EA;&#x662F;&#x4E3A;&#x4E86;&#x4E3E;&#x4F8B;&#x8BF4;&#x660E; Sequelize &#x529F;&#x80FD;. &#x6211;&#x4EEC;&#x5EFA;&#x8BAE;&#x8BA9;&#x7F51;&#x7EDC;&#x5B89;&#x5168;&#x4E13;&#x5BB6;&#x9605;&#x8BFB; <a href="https://www.owasp.org/" target="_blank">OWASP</a> &#x6587;&#x6863;&#x6216;&#x8005;&#x8BBF;&#x95EE; <a href="https://security.stackexchange.com/" target="_blank">InfoSec StackExchange</a>.</p>
+<h2 id="&#x7EC4;&#x5408;&#x83B7;&#x53D6;&#x5668;&#x548C;&#x8BBE;&#x7F6E;&#x5668;"><a name="&#x7EC4;&#x5408;&#x83B7;&#x53D6;&#x5668;&#x548C;&#x8BBE;&#x7F6E;&#x5668;" class="anchor-navigation-ex-anchor" href="#&#x7EC4;&#x5408;&#x83B7;&#x53D6;&#x5668;&#x548C;&#x8BBE;&#x7F6E;&#x5668;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x7EC4;&#x5408;&#x83B7;&#x53D6;&#x5668;&#x548C;&#x8BBE;&#x7F6E;&#x5668;</h2>
+<p>&#x83B7;&#x53D6;&#x5668;&#x548C;&#x8BBE;&#x7F6E;&#x5668;&#x90FD;&#x53EF;&#x4EE5;&#x5728;&#x540C;&#x4E00;&#x5B57;&#x6BB5;&#x4E2D;&#x5B9A;&#x4E49;.</p>
+<p>&#x4E3E;&#x4E2A;&#x4F8B;&#x5B50;,&#x5047;&#x8BBE;&#x6211;&#x4EEC;&#x6B63;&#x5728;&#x5EFA;&#x4E00;&#x4E2A; <code>Post</code> &#x6A21;&#x578B;,&#x5176; <code>content</code> &#x662F;&#x65E0;&#x9650;&#x957F;&#x5EA6;&#x7684;&#x6587;&#x672C;. &#x5047;&#x8BBE;&#x8981;&#x63D0;&#x9AD8;&#x5185;&#x5B58;&#x4F7F;&#x7528;&#x7387;,&#x6211;&#x4EEC;&#x8981;&#x5B58;&#x50A8;&#x5185;&#x5BB9;&#x7684;&#x538B;&#x7F29;&#x7248;&#x672C;.</p>
+<p><em>&#x6CE8;&#x610F;&#xFF1A;&#x5728;&#x8FD9;&#x79CD;&#x60C5;&#x51B5;&#x4E0B;,&#x73B0;&#x4EE3;&#x6570;&#x636E;&#x5E93;&#x5E94;&#x4F1A;&#x81EA;&#x52A8;&#x8FDB;&#x884C;&#x4E00;&#x4E9B;&#x538B;&#x7F29;. &#x8FD9;&#x53EA;&#x662F;&#x4E3A;&#x4E86;&#x4E3E;&#x4F8B;.</em></p>
+<pre class="language-"><code class="lang-js"><span class="token keyword">const</span> <span class="token punctuation">{</span> gzipSync<span class="token punctuation">,</span> gunzipSync <span class="token punctuation">}</span> <span class="token operator">=</span> <span class="token function">require</span><span class="token punctuation">(</span><span class="token string">&apos;zlib&apos;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span class="token keyword">const</span> Post <span class="token operator">=</span> sequelize<span class="token punctuation">.</span><span class="token function">define</span><span class="token punctuation">(</span><span class="token string">&apos;post&apos;</span><span class="token punctuation">,</span> <span class="token punctuation">{</span>
+  <span class="token literal-property property">content</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+    <span class="token literal-property property">type</span><span class="token operator">:</span> DataTypes<span class="token punctuation">.</span><span class="token constant">TEXT</span><span class="token punctuation">,</span>
+    <span class="token function">get</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      <span class="token keyword">const</span> storedValue <span class="token operator">=</span> <span class="token keyword">this</span><span class="token punctuation">.</span><span class="token function">getDataValue</span><span class="token punctuation">(</span><span class="token string">&apos;content&apos;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+      <span class="token keyword">const</span> gzippedBuffer <span class="token operator">=</span> Buffer<span class="token punctuation">.</span><span class="token function">from</span><span class="token punctuation">(</span>storedValue<span class="token punctuation">,</span> <span class="token string">&apos;base64&apos;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+      <span class="token keyword">const</span> unzippedBuffer <span class="token operator">=</span> <span class="token function">gunzipSync</span><span class="token punctuation">(</span>gzippedBuffer<span class="token punctuation">)</span><span class="token punctuation">;</span>
+      <span class="token keyword">return</span> unzippedBuffer<span class="token punctuation">.</span><span class="token function">toString</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span><span class="token punctuation">,</span>
+    <span class="token function">set</span><span class="token punctuation">(</span>value<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      <span class="token keyword">const</span> gzippedBuffer <span class="token operator">=</span> <span class="token function">gzipSync</span><span class="token punctuation">(</span>value<span class="token punctuation">)</span><span class="token punctuation">;</span>
+      <span class="token keyword">this</span><span class="token punctuation">.</span><span class="token function">setDataValue</span><span class="token punctuation">(</span><span class="token string">&apos;content&apos;</span><span class="token punctuation">,</span> gzippedBuffer<span class="token punctuation">.</span><span class="token function">toString</span><span class="token punctuation">(</span><span class="token string">&apos;base64&apos;</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre>
+<p>&#x901A;&#x8FC7;&#x4E0A;&#x8FF0;&#x8BBE;&#x7F6E;,&#x6BCF;&#x5F53;&#x6211;&#x4EEC;&#x5C1D;&#x8BD5;&#x4E0E; <code>Post</code> &#x6A21;&#x578B;&#x7684; <code>content</code> &#x5B57;&#x6BB5;&#x8FDB;&#x884C;&#x4EA4;&#x4E92;&#x65F6;,Sequelize &#x90FD;&#x4F1A;&#x81EA;&#x52A8;&#x5904;&#x7406;&#x81EA;&#x5B9A;&#x4E49;&#x7684;&#x83B7;&#x53D6;&#x5668;&#x548C;&#x8BBE;&#x7F6E;&#x5668;. &#x4F8B;&#x5982;&#xFF1A;</p>
+<pre class="language-"><code class="lang-js"><span class="token keyword">const</span> post <span class="token operator">=</span> <span class="token keyword">await</span> Post<span class="token punctuation">.</span><span class="token function">create</span><span class="token punctuation">(</span><span class="token punctuation">{</span> <span class="token literal-property property">content</span><span class="token operator">:</span> <span class="token string">&apos;Hello everyone!&apos;</span> <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>post<span class="token punctuation">.</span>content<span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// &apos;Hello everyone!&apos;</span>
+<span class="token comment">// &#x4E00;&#x5207;&#x90FD;&#x5728;&#x5E55;&#x540E;&#x8FDB;&#x884C;,&#x6240;&#x4EE5;&#x6211;&#x4EEC;&#x751A;&#x81F3;&#x90FD;&#x53EF;&#x4EE5;&#x5FD8;&#x8BB0;&#x5185;&#x5BB9;&#x5B9E;&#x9645;&#x4E0A;&#x662F;</span>
+<span class="token comment">// &#x4F5C;&#x4E3A; gzip &#x538B;&#x7F29;&#x7684; base64 &#x5B57;&#x7B26;&#x4E32;&#x5B58;&#x50A8;&#x7684;&#xFF01;</span>
+
+<span class="token comment">// &#x4F46;&#x662F;,&#x5982;&#x679C;&#x6211;&#x4EEC;&#x771F;&#x7684;&#x5F88;&#x597D;&#x5947;,&#x6211;&#x4EEC;&#x53EF;&#x4EE5;&#x83B7;&#x53D6; &apos;raw&apos; &#x6570;&#x636E;...</span>
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>post<span class="token punctuation">.</span><span class="token function">getDataValue</span><span class="token punctuation">(</span><span class="token string">&apos;content&apos;</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token comment">// Output: &apos;H4sIAAAAAAAACvNIzcnJV0gtSy2qzM9LVQQAUuk9jQ8AAAA=&apos;</span>
+</code></pre>
+<h2 id="&#x865A;&#x62DF;&#x5B57;&#x6BB5;"><a name="&#x865A;&#x62DF;&#x5B57;&#x6BB5;" class="anchor-navigation-ex-anchor" href="#&#x865A;&#x62DF;&#x5B57;&#x6BB5;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x865A;&#x62DF;&#x5B57;&#x6BB5;</h2>
+<p>&#x865A;&#x62DF;&#x5B57;&#x6BB5;&#x662F; Sequelize &#x5728;&#x540E;&#x53F0;&#x586B;&#x5145;&#x7684;&#x5B57;&#x6BB5;,&#x4F46;&#x5B9E;&#x9645;&#x4E0A;&#x5B83;&#x4EEC;&#x4E0D;&#x5B58;&#x5728;&#x4E8E;&#x6570;&#x636E;&#x5E93;&#x4E2D;.</p>
+<p>&#x4F8B;&#x5982;,&#x5047;&#x8BBE;&#x6211;&#x4EEC;&#x6709;&#x4E00;&#x4E2A; User &#x7684; <code>firstName</code> &#x548C; <code>lastName</code> &#x5C5E;&#x6027;.\</p>
+<p><em>&#x540C;&#x6837;,&#x8FD9;<a href="https://www.kalzumeus.com/2010/06/17/falsehoods-programmers-believe-about-names/" target="_blank">&#x4EC5;&#x662F;&#x4E3A;&#x4E86;&#x793A;&#x4F8B;</a>.</em></p>
+<p>&#x5982;&#x679C;&#x6709;&#x4E00;&#x79CD;&#x7B80;&#x5355;&#x7684;&#x65B9;&#x6CD5;&#x80FD;&#x76F4;&#x63A5;&#x83B7;&#x53D6; <em>&#x5168;&#x540D;</em> &#x90A3;&#x4F1A;&#x975E;&#x5E38;&#x597D;&#xFF01; &#x6211;&#x4EEC;&#x53EF;&#x4EE5;&#x5C06; <code>getters</code> &#x7684;&#x6982;&#x5FF5;&#x4E0E; Sequelize &#x9488;&#x5BF9;&#x8FD9;&#x79CD;&#x60C5;&#x51B5;&#x63D0;&#x4F9B;&#x7684;&#x7279;&#x6B8A;&#x6570;&#x636E;&#x7C7B;&#x578B;&#x7ED3;&#x5408;&#x4F7F;&#x7528;&#xFF1A;<code>DataTypes.VIRTUAL</code>:</p>
+<pre class="language-"><code class="lang-js"><span class="token keyword">const</span> <span class="token punctuation">{</span> DataTypes <span class="token punctuation">}</span> <span class="token operator">=</span> <span class="token function">require</span><span class="token punctuation">(</span><span class="token string">&quot;sequelize&quot;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span class="token keyword">const</span> User <span class="token operator">=</span> sequelize<span class="token punctuation">.</span><span class="token function">define</span><span class="token punctuation">(</span><span class="token string">&apos;user&apos;</span><span class="token punctuation">,</span> <span class="token punctuation">{</span>
+  <span class="token literal-property property">firstName</span><span class="token operator">:</span> DataTypes<span class="token punctuation">.</span><span class="token constant">TEXT</span><span class="token punctuation">,</span>
+  <span class="token literal-property property">lastName</span><span class="token operator">:</span> DataTypes<span class="token punctuation">.</span><span class="token constant">TEXT</span><span class="token punctuation">,</span>
+  <span class="token literal-property property">fullName</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+    <span class="token literal-property property">type</span><span class="token operator">:</span> DataTypes<span class="token punctuation">.</span><span class="token constant">VIRTUAL</span><span class="token punctuation">,</span>
+    <span class="token function">get</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      <span class="token keyword">return</span> <span class="token template-string"><span class="token template-punctuation string">`</span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">${</span><span class="token keyword">this</span><span class="token punctuation">.</span>firstName<span class="token interpolation-punctuation punctuation">}</span></span><span class="token string"> </span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">${</span><span class="token keyword">this</span><span class="token punctuation">.</span>lastName<span class="token interpolation-punctuation punctuation">}</span></span><span class="token template-punctuation string">`</span></span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span><span class="token punctuation">,</span>
+    <span class="token function">set</span><span class="token punctuation">(</span>value<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      <span class="token keyword">throw</span> <span class="token keyword">new</span> <span class="token class-name">Error</span><span class="token punctuation">(</span><span class="token string">&apos;&#x4E0D;&#x8981;&#x5C1D;&#x8BD5;&#x8BBE;&#x7F6E; `fullName` &#x7684;&#x503C;!&apos;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre>
+<p><code>VIRTUAL</code> &#x5B57;&#x6BB5;&#x4E0D;&#x4F1A;&#x5BFC;&#x81F4;&#x6570;&#x636E;&#x8868;&#x4E5F;&#x5B58;&#x5728;&#x6B64;&#x5217;. &#x6362;&#x53E5;&#x8BDD;&#x8BF4;,&#x4E0A;&#x9762;&#x7684;&#x6A21;&#x578B;&#x867D;&#x7136;&#x6CA1;&#x6709; <code>fullName</code> &#x5217;. &#x4F46;&#x662F;&#x5B83;&#x4F3C;&#x4E4E;&#x5B58;&#x5728;&#x7740;&#xFF01;</p>
+<pre class="language-"><code class="lang-js"><span class="token keyword">const</span> user <span class="token operator">=</span> <span class="token keyword">await</span> User<span class="token punctuation">.</span><span class="token function">create</span><span class="token punctuation">(</span><span class="token punctuation">{</span> <span class="token literal-property property">firstName</span><span class="token operator">:</span> <span class="token string">&apos;John&apos;</span><span class="token punctuation">,</span> <span class="token literal-property property">lastName</span><span class="token operator">:</span> <span class="token string">&apos;Doe&apos;</span> <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>user<span class="token punctuation">.</span>fullName<span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// &apos;John Doe&apos;</span>
+</code></pre>
+<h2 id="&#x5728;-sequelize-v7-&#x4E2D;&#x5DF2;&#x5F03;&#x7528;&#xFF1A;gettermethods-&#x548C;-settermethods"><a name="&#x5728;-sequelize-v7-&#x4E2D;&#x5DF2;&#x5F03;&#x7528;&#xFF1A;gettermethods-&#x548C;-settermethods" class="anchor-navigation-ex-anchor" href="#&#x5728;-sequelize-v7-&#x4E2D;&#x5DF2;&#x5F03;&#x7528;&#xFF1A;gettermethods-&#x548C;-settermethods"><i class="fa fa-link" aria-hidden="true"></i></a>&#x5728; Sequelize v7 &#x4E2D;&#x5DF2;&#x5F03;&#x7528;&#xFF1A;<code>getterMethods</code> &#x548C; <code>setterMethods</code></h2>
+<p>Sequelize &#x5728;&#x6A21;&#x578B;&#x5B9A;&#x4E49;&#x4E2D;&#x8FD8;&#x63D0;&#x4F9B;&#x4E86; <code>getterMethods</code> &#x548C; <code>setterMethods</code> &#x53C2;&#x6570;,&#x4EE5;&#x6307;&#x5B9A;&#x770B;&#x8D77;&#x6765;&#x50CF;&#x4F46;&#x4E0E;&#x865A;&#x62DF;&#x5C5E;&#x6027;&#x4E0D;&#x5B8C;&#x5168;&#x76F8;&#x540C;&#x7684;&#x4E8B;&#x7269;. &#x4E0D;&#x9F13;&#x52B1;&#x4F7F;&#x7528;&#x6B64;&#x65B9;&#x6CD5;,&#x5E76;&#x4E14;&#x5C06;&#x6765;&#x53EF;&#x80FD;&#x4F1A;<strong>&#x4E0D;&#x5EFA;&#x8BAE;</strong>&#x4F7F;&#x7528;(&#x5EFA;&#x8BAE;&#x76F4;&#x63A5;&#x4F7F;&#x7528;&#x865A;&#x62DF;&#x5C5E;&#x6027;).</p>
+<p>&#x793A;&#x4F8B;:</p>
+<pre class="language-"><code class="lang-js"><span class="token keyword">const</span> <span class="token punctuation">{</span> Sequelize<span class="token punctuation">,</span> DataTypes <span class="token punctuation">}</span> <span class="token operator">=</span> <span class="token function">require</span><span class="token punctuation">(</span><span class="token string">&apos;sequelize&apos;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token keyword">const</span> sequelize <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Sequelize</span><span class="token punctuation">(</span><span class="token string">&apos;sqlite::memory:&apos;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span class="token keyword">const</span> User <span class="token operator">=</span> sequelize<span class="token punctuation">.</span><span class="token function">define</span><span class="token punctuation">(</span><span class="token string">&apos;user&apos;</span><span class="token punctuation">,</span> <span class="token punctuation">{</span>
+  <span class="token literal-property property">firstName</span><span class="token operator">:</span> DataTypes<span class="token punctuation">.</span><span class="token constant">STRING</span><span class="token punctuation">,</span>
+  <span class="token literal-property property">lastName</span><span class="token operator">:</span> DataTypes<span class="token punctuation">.</span><span class="token constant">STRING</span>
+<span class="token punctuation">}</span><span class="token punctuation">,</span> <span class="token punctuation">{</span>
+  <span class="token literal-property property">getterMethods</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+    <span class="token function">fullName</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      <span class="token keyword">return</span> <span class="token keyword">this</span><span class="token punctuation">.</span>firstName <span class="token operator">+</span> <span class="token string">&apos; &apos;</span> <span class="token operator">+</span> <span class="token keyword">this</span><span class="token punctuation">.</span>lastName<span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+  <span class="token punctuation">}</span><span class="token punctuation">,</span>
+  <span class="token literal-property property">setterMethods</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+    <span class="token function">fullName</span><span class="token punctuation">(</span><span class="token parameter">value</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      <span class="token comment">// &#x6CE8;&#x610F;&#xFF1A;&#x8FD9;&#x4EC5;&#x7528;&#x4E8E;&#x6F14;&#x793A;.</span>
+      <span class="token comment">// &#x67E5;&#x9605;: https://www.kalzumeus.com/2010/06/17/falsehoods-programmers-believe-about-names/</span>
+      <span class="token keyword">const</span> names <span class="token operator">=</span> value<span class="token punctuation">.</span><span class="token function">split</span><span class="token punctuation">(</span><span class="token string">&apos; &apos;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+      <span class="token keyword">const</span> firstName <span class="token operator">=</span> names<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
+      <span class="token keyword">const</span> lastName <span class="token operator">=</span> names<span class="token punctuation">.</span><span class="token function">slice</span><span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">join</span><span class="token punctuation">(</span><span class="token string">&apos; &apos;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+      <span class="token keyword">this</span><span class="token punctuation">.</span><span class="token function">setDataValue</span><span class="token punctuation">(</span><span class="token string">&apos;firstName&apos;</span><span class="token punctuation">,</span> firstName<span class="token punctuation">)</span><span class="token punctuation">;</span>
+      <span class="token keyword">this</span><span class="token punctuation">.</span><span class="token function">setDataValue</span><span class="token punctuation">(</span><span class="token string">&apos;lastName&apos;</span><span class="token punctuation">,</span> lastName<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span class="token punctuation">(</span><span class="token keyword">async</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+  <span class="token keyword">await</span> sequelize<span class="token punctuation">.</span><span class="token function">sync</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token keyword">let</span> user <span class="token operator">=</span> <span class="token keyword">await</span> User<span class="token punctuation">.</span><span class="token function">create</span><span class="token punctuation">(</span><span class="token punctuation">{</span> <span class="token literal-property property">firstName</span><span class="token operator">:</span> <span class="token string">&apos;John&apos;</span><span class="token punctuation">,</span>  <span class="token literal-property property">lastName</span><span class="token operator">:</span> <span class="token string">&apos;Doe&apos;</span> <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>user<span class="token punctuation">.</span>fullName<span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// &apos;John Doe&apos;</span>
+  user<span class="token punctuation">.</span>fullName <span class="token operator">=</span> <span class="token string">&apos;Someone Else&apos;</span><span class="token punctuation">;</span>
+  <span class="token keyword">await</span> user<span class="token punctuation">.</span><span class="token function">save</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  user <span class="token operator">=</span> <span class="token keyword">await</span> User<span class="token punctuation">.</span><span class="token function">findOne</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>user<span class="token punctuation">.</span>firstName<span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// &apos;Someone&apos;</span>
+  console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>user<span class="token punctuation">.</span>lastName<span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// &apos;Else&apos;</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre>
+<footer class="page-footer"><span class="copyright">&#x6708;&#x660E; all right reserved&#xFF0C;powered by Gitbook</span><span class="footer-modification">&#x8BE5;&#x6587;&#x4EF6;&#x6700;&#x540E;&#x4FEE;&#x6539;&#x65F6;&#x95F4;&#xFF1A;
+2022-03-25 18:10:52
+</span></footer>
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="model-querying-finders.html" class="navigation navigation-prev " aria-label="Previous page: Model Querying - Finders - 模型查询(查找器)">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="validations-and-constraints.html" class="navigation navigation-next " aria-label="Next page: Validations & Constraints - 验证 & 约束">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"Getters, Setters & Virtuals - 获取器, 设置器 & 虚拟字段","level":"1.7","depth":1,"next":{"title":"Validations & Constraints - 验证 & 约束","level":"1.8","depth":1,"path":"core-concepts/validations-and-constraints.md","ref":"core-concepts/validations-and-constraints.md","articles":[]},"previous":{"title":"Model Querying - Finders - 模型查询(查找器)","level":"1.6","depth":1,"path":"core-concepts/model-querying-finders.md","ref":"core-concepts/model-querying-finders.md","articles":[]},"dir":"ltr"},"config":{"plugins":["-lunr","-search","-highlight","-livereload","-sharing","-fontsettings","search-pro","chapter-fold","expandable-chapters","splitter","anchor-navigation-ex","lightbox","tbfed-pagefooter","hide-element","prism","copy-code-button","editlink"],"root":"/doc","styles":{"website":"styles/website.css"},"pluginsConfig":{"tbfed-pagefooter":{"copyright":"月明","modify_label":"该文件最后修改时间：","modify_format":"YYYY-MM-DD HH:mm:ss"},"chapter-fold":{},"prism":{"css":["prismjs/themes/prism-okaidia.css"],"ignore":["null","undefined","vue","HTML","clang","cmd","tex","mysql"]},"editlink":{"label":"Edit This Page","multilingual":false,"base":"https://github.com/moon610"},"splitter":{},"search-pro":{},"hide-element":{"elements":[".gitbook-link"]},"anchor-navigation-ex":{"associatedWithSummary":true,"float":{"floatIcon":"fa fa-navicon","level1Icon":"","level2Icon":"","level3Icon":"","showLevelIcon":false},"mode":"float","multipleH1":true,"pageTop":{"level1Icon":"","level2Icon":"","level3Icon":"","showLevelIcon":false},"printLog":true,"showGoTop":true,"showLevel":false},"lightbox":{"jquery":true,"sameUuid":false},"copy-code-button":{},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"expandable-chapters":{}},"theme":"default","author":"月歌","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"notebook","gitbook":"3.2.3","description":"记录学习和生活"},"file":{"path":"core-concepts/getters-setters-virtuals.md","mtime":"2022-03-25T10:10:52.060Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2022-03-25T10:43:32.004Z"},"basePath":"..","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="../gitbook/gitbook.js"></script>
+    <script src="../gitbook/theme.js"></script>
+    
+        
+        <script src="../gitbook/gitbook-plugin-search-pro/jquery.mark.min.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search-pro/search.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-chapter-fold/chapter-fold.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-expandable-chapters/expandable-chapters.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-splitter/splitter.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lightbox/js/lightbox.min.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-hide-element/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-copy-code-button/toggle.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-editlink/plugin.js"></script>
+        
+    
+
+    </body>
+</html>
+

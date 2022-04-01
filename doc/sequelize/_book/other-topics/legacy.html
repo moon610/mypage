@@ -1,0 +1,755 @@
+
+<!DOCTYPE HTML>
+<html lang="" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>Working with Legacy Tables - 使用遗留表 · notebook</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.3">
+        <meta name="author" content="月歌">
+        
+        
+    
+    <link rel="stylesheet" href="../gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-search-pro/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-chapter-fold/chapter-fold.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-expandable-chapters/expandable-chapters.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-splitter/splitter.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-anchor-navigation-ex/style/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-lightbox/css/lightbox.min.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-tbfed-pagefooter/footer.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-prism/prism-okaidia.css">
+                
+            
+        
+
+    
+
+    
+        
+        <link rel="stylesheet" href="../styles/website.css">
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="migrations.html" />
+    
+    
+    <link rel="prev" href="connection-pool.html" />
+    
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="Type to search" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        <li class="header">核心概念</li>
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="../">
+            
+                <a href="../">
+            
+                    
+                    Introduction
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" data-path="../core-concepts/getting-started.html">
+            
+                <a href="../core-concepts/getting-started.html">
+            
+                    
+                    Getting Started - 入门
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3" data-path="../core-concepts/model-basics.html">
+            
+                <a href="../core-concepts/model-basics.html">
+            
+                    
+                    Model Basics - 模型基础
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4" data-path="../core-concepts/model-instances.html">
+            
+                <a href="../core-concepts/model-instances.html">
+            
+                    
+                    Model Instances - 模型实例
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5" data-path="../core-concepts/model-querying-basics.html">
+            
+                <a href="../core-concepts/model-querying-basics.html">
+            
+                    
+                    Model Querying - Basics - 模型查询(基础)
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6" data-path="../core-concepts/model-querying-finders.html">
+            
+                <a href="../core-concepts/model-querying-finders.html">
+            
+                    
+                    Model Querying - Finders - 模型查询(查找器)
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7" data-path="../core-concepts/getters-setters-virtuals.html">
+            
+                <a href="../core-concepts/getters-setters-virtuals.html">
+            
+                    
+                    Getters, Setters & Virtuals - 获取器, 设置器 & 虚拟字段
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8" data-path="../core-concepts/validations-and-constraints.html">
+            
+                <a href="../core-concepts/validations-and-constraints.html">
+            
+                    
+                    Validations & Constraints - 验证 & 约束
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9" data-path="../core-concepts/raw-queries.html">
+            
+                <a href="../core-concepts/raw-queries.html">
+            
+                    
+                    Raw Queries - 原始查询
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.10" data-path="../core-concepts/assocs.html">
+            
+                <a href="../core-concepts/assocs.html">
+            
+                    
+                    Associations - 关联
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.11" data-path="../core-concepts/paranoid.html">
+            
+                <a href="../core-concepts/paranoid.html">
+            
+                    
+                    Paranoid - 偏执表
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="header">高级关联概念</li>
+        
+        
+    
+        <li class="chapter " data-level="2.1" data-path="../advanced-association-concepts/eager-loading.html">
+            
+                <a href="../advanced-association-concepts/eager-loading.html">
+            
+                    
+                    Eager Loading - 预先加载
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.2" data-path="../advanced-association-concepts/creating-with-associations.html">
+            
+                <a href="../advanced-association-concepts/creating-with-associations.html">
+            
+                    
+                    Creating with Associations - 创建关联
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.3" data-path="../advanced-association-concepts/advanced-many-to-many.html">
+            
+                <a href="../advanced-association-concepts/advanced-many-to-many.html">
+            
+                    
+                    Advanced M:N Associations - 高级 M:N 关联
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.4" data-path="../advanced-association-concepts/association-scopes.html">
+            
+                <a href="../advanced-association-concepts/association-scopes.html">
+            
+                    
+                    Association Scopes - 关联作用域
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.5" data-path="../advanced-association-concepts/polymorphic-associations.html">
+            
+                <a href="../advanced-association-concepts/polymorphic-associations.html">
+            
+                    
+                    Polymorphic Associations - 多态关联
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="header">其它主题</li>
+        
+        
+    
+        <li class="chapter " data-level="3.1" data-path="dialect-specific-things.html">
+            
+                <a href="dialect-specific-things.html">
+            
+                    
+                    Dialect-Specific Things - 方言特定事项
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.2" data-path="transactions.html">
+            
+                <a href="transactions.html">
+            
+                    
+                    Transactions - 事务
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.3" data-path="hooks.html">
+            
+                <a href="hooks.html">
+            
+                    
+                    Hooks - 钩子
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.4" data-path="query-interface.html">
+            
+                <a href="query-interface.html">
+            
+                    
+                    Query Interface - 查询接口
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.5" data-path="naming-strategies.html">
+            
+                <a href="naming-strategies.html">
+            
+                    
+                    Naming Strategies - 命名策略
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.6" data-path="scopes.html">
+            
+                <a href="scopes.html">
+            
+                    
+                    Scopes - 作用域
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.7" data-path="sub-queries.html">
+            
+                <a href="sub-queries.html">
+            
+                    
+                    Sub Queries - 子查询
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.8" data-path="other-data-types.html">
+            
+                <a href="other-data-types.html">
+            
+                    
+                    Other Data Types - 其他数据类型
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.9" data-path="constraints-and-circularities.html">
+            
+                <a href="constraints-and-circularities.html">
+            
+                    
+                    Constraints & Circularities - 约束 & 循环
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.10" data-path="extending-data-types.html">
+            
+                <a href="extending-data-types.html">
+            
+                    
+                    Extending Data Types - 扩展数据类型
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.11" data-path="indexes.html">
+            
+                <a href="indexes.html">
+            
+                    
+                    Indexes - 索引
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.12" data-path="optimistic-locking.html">
+            
+                <a href="optimistic-locking.html">
+            
+                    
+                    Optimistic Locking - 乐观锁定
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.13" data-path="read-replication.html">
+            
+                <a href="read-replication.html">
+            
+                    
+                    Read Replication - 读取复制
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.14" data-path="connection-pool.html">
+            
+                <a href="connection-pool.html">
+            
+                    
+                    Connection Pool - 连接池
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="3.15" data-path="legacy.html">
+            
+                <a href="legacy.html">
+            
+                    
+                    Working with Legacy Tables - 使用遗留表
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.16" data-path="migrations.html">
+            
+                <a href="migrations.html">
+            
+                    
+                    Migrations - 迁移
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.17" data-path="typescript.html">
+            
+                <a href="typescript.html">
+            
+                    
+                    TypeScript
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.18" data-path="resources.html">
+            
+                <a href="resources.html">
+            
+                    
+                    Resources - 资源
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            Published with GitBook
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href=".." >Working with Legacy Tables - 使用遗留表</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <div id="anchor-navigation-ex-navbar"><i class="fa fa-navicon"></i><ul><li><span class="title-icon "></span><a href="#working-with-legacy-tables---&#x4F7F;&#x7528;&#x9057;&#x7559;&#x8868;"><b></b>Working with Legacy Tables - &#x4F7F;&#x7528;&#x9057;&#x7559;&#x8868;</a></li><ul><li><span class="title-icon "></span><a href="#&#x8868;"><b></b>&#x8868;</a></li><li><span class="title-icon "></span><a href="#&#x5B57;&#x6BB5;"><b></b>&#x5B57;&#x6BB5;</a></li><li><span class="title-icon "></span><a href="#&#x4E3B;&#x952E;"><b></b>&#x4E3B;&#x952E;</a></li><li><span class="title-icon "></span><a href="#&#x5916;&#x952E;"><b></b>&#x5916;&#x952E;</a></li></ul></ul></div><a href="#working-with-legacy-tables---&#x4F7F;&#x7528;&#x9057;&#x7559;&#x8868;" id="anchorNavigationExGoTop"><i class="fa fa-arrow-up"></i></a><h1 id="working-with-legacy-tables---&#x4F7F;&#x7528;&#x9057;&#x7559;&#x8868;"><a name="working-with-legacy-tables---&#x4F7F;&#x7528;&#x9057;&#x7559;&#x8868;" class="anchor-navigation-ex-anchor" href="#working-with-legacy-tables---&#x4F7F;&#x7528;&#x9057;&#x7559;&#x8868;"><i class="fa fa-link" aria-hidden="true"></i></a>Working with Legacy Tables - &#x4F7F;&#x7528;&#x9057;&#x7559;&#x8868;</h1>
+<p>&#x867D;&#x7136; Sequelize &#x81EA;&#x8BA4;&#x4E3A;&#x53EF;&#x4EE5;&#x5F00;&#x7BB1;&#x5373;&#x7528;, &#x4F46;&#x662F;&#x5982;&#x679C;&#x4F60;&#x8981;&#x5904;&#x7406;&#x9057;&#x7559;&#x8868;&#x5E76;&#x5411;&#x524D;&#x9A8C;&#x8BC1;&#x5E94;&#x7528;&#x7A0B;&#x5E8F;,&#x4EC5;&#x9700;&#x8981;&#x901A;&#x8FC7;&#x5B9A;&#x4E49;(&#x5426;&#x5219;&#x751F;&#x6210;)&#x8868;&#x548C;&#x5B57;&#x6BB5;&#x540D;&#x79F0;&#x5373;&#x53EF;.</p>
+<h2 id="&#x8868;"><a name="&#x8868;" class="anchor-navigation-ex-anchor" href="#&#x8868;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x8868;</h2>
+<pre class="language-"><code class="lang-js"><span class="token keyword">class</span> <span class="token class-name">User</span> <span class="token keyword">extends</span> <span class="token class-name">Model</span> <span class="token punctuation">{</span><span class="token punctuation">}</span>
+User<span class="token punctuation">.</span><span class="token function">init</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
+  <span class="token comment">// ...</span>
+<span class="token punctuation">}</span><span class="token punctuation">,</span> <span class="token punctuation">{</span>
+  <span class="token literal-property property">modelName</span><span class="token operator">:</span> <span class="token string">&apos;user&apos;</span><span class="token punctuation">,</span>
+  <span class="token literal-property property">tableName</span><span class="token operator">:</span> <span class="token string">&apos;users&apos;</span><span class="token punctuation">,</span>
+  sequelize<span class="token punctuation">,</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre>
+<h2 id="&#x5B57;&#x6BB5;"><a name="&#x5B57;&#x6BB5;" class="anchor-navigation-ex-anchor" href="#&#x5B57;&#x6BB5;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x5B57;&#x6BB5;</h2>
+<pre class="language-"><code class="lang-js"><span class="token keyword">class</span> <span class="token class-name">MyModel</span> <span class="token keyword">extends</span> <span class="token class-name">Model</span> <span class="token punctuation">{</span><span class="token punctuation">}</span>
+MyModel<span class="token punctuation">.</span><span class="token function">init</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
+  <span class="token literal-property property">userId</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+    <span class="token literal-property property">type</span><span class="token operator">:</span> DataTypes<span class="token punctuation">.</span><span class="token constant">INTEGER</span><span class="token punctuation">,</span>
+    <span class="token literal-property property">field</span><span class="token operator">:</span> <span class="token string">&apos;user_id&apos;</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span><span class="token punctuation">,</span> <span class="token punctuation">{</span> sequelize <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre>
+<h2 id="&#x4E3B;&#x952E;"><a name="&#x4E3B;&#x952E;" class="anchor-navigation-ex-anchor" href="#&#x4E3B;&#x952E;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x4E3B;&#x952E;</h2>
+<p>&#x9ED8;&#x8BA4;&#x60C5;&#x51B5;&#x4E0B;,Sequelize &#x4F1A;&#x5047;&#x8BBE;&#x4F60;&#x7684;&#x8868;&#x5177;&#x6709; <code>id</code> &#x4E3B;&#x952E;&#x5C5E;&#x6027;.</p>
+<p>&#x5B9A;&#x4E49;&#x81EA;&#x5DF1;&#x7684;&#x4E3B;&#x952E;:</p>
+<pre class="language-"><code class="lang-js"><span class="token keyword">class</span> <span class="token class-name">Collection</span> <span class="token keyword">extends</span> <span class="token class-name">Model</span> <span class="token punctuation">{</span><span class="token punctuation">}</span>
+Collection<span class="token punctuation">.</span><span class="token function">init</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
+  <span class="token literal-property property">uid</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+    <span class="token literal-property property">type</span><span class="token operator">:</span> DataTypes<span class="token punctuation">.</span><span class="token constant">INTEGER</span><span class="token punctuation">,</span>
+    <span class="token literal-property property">primaryKey</span><span class="token operator">:</span> <span class="token boolean">true</span><span class="token punctuation">,</span>
+    <span class="token literal-property property">autoIncrement</span><span class="token operator">:</span> <span class="token boolean">true</span> <span class="token comment">// &#x81EA;&#x52A8;&#x8F6C;&#x6362;&#x4E3A; PostgreSQL &#x7684; SERIAL</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span><span class="token punctuation">,</span> <span class="token punctuation">{</span> sequelize <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span class="token keyword">class</span> <span class="token class-name">Collection</span> <span class="token keyword">extends</span> <span class="token class-name">Model</span> <span class="token punctuation">{</span><span class="token punctuation">}</span>
+Collection<span class="token punctuation">.</span><span class="token function">init</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
+  <span class="token literal-property property">uuid</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+    <span class="token literal-property property">type</span><span class="token operator">:</span> DataTypes<span class="token punctuation">.</span><span class="token constant">UUID</span><span class="token punctuation">,</span>
+    <span class="token literal-property property">primaryKey</span><span class="token operator">:</span> <span class="token boolean">true</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span><span class="token punctuation">,</span> <span class="token punctuation">{</span> sequelize <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre>
+<p>&#x5982;&#x679C;&#x4F60;&#x7684;&#x6A21;&#x578B;&#x6839;&#x672C;&#x6CA1;&#x6709;&#x4E3B;&#x952E;,&#x5219;&#x53EF;&#x4EE5;&#x4F7F;&#x7528; <code>Model.removeAttribute(&apos;id&apos;);</code></p>
+<h2 id="&#x5916;&#x952E;"><a name="&#x5916;&#x952E;" class="anchor-navigation-ex-anchor" href="#&#x5916;&#x952E;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x5916;&#x952E;</h2>
+<pre class="language-"><code class="lang-js"><span class="token comment">// 1:1</span>
+Organization<span class="token punctuation">.</span><span class="token function">belongsTo</span><span class="token punctuation">(</span>User<span class="token punctuation">,</span> <span class="token punctuation">{</span> <span class="token literal-property property">foreignKey</span><span class="token operator">:</span> <span class="token string">&apos;owner_id&apos;</span> <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+User<span class="token punctuation">.</span><span class="token function">hasOne</span><span class="token punctuation">(</span>Organization<span class="token punctuation">,</span> <span class="token punctuation">{</span> <span class="token literal-property property">foreignKey</span><span class="token operator">:</span> <span class="token string">&apos;owner_id&apos;</span> <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span class="token comment">// 1:M</span>
+Project<span class="token punctuation">.</span><span class="token function">hasMany</span><span class="token punctuation">(</span>Task<span class="token punctuation">,</span> <span class="token punctuation">{</span> <span class="token literal-property property">foreignKey</span><span class="token operator">:</span> <span class="token string">&apos;tasks_pk&apos;</span> <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+Task<span class="token punctuation">.</span><span class="token function">belongsTo</span><span class="token punctuation">(</span>Project<span class="token punctuation">,</span> <span class="token punctuation">{</span> <span class="token literal-property property">foreignKey</span><span class="token operator">:</span> <span class="token string">&apos;tasks_pk&apos;</span> <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span class="token comment">// N:M</span>
+User<span class="token punctuation">.</span><span class="token function">belongsToMany</span><span class="token punctuation">(</span>Role<span class="token punctuation">,</span> <span class="token punctuation">{</span> <span class="token literal-property property">through</span><span class="token operator">:</span> <span class="token string">&apos;user_has_roles&apos;</span><span class="token punctuation">,</span> <span class="token literal-property property">foreignKey</span><span class="token operator">:</span> <span class="token string">&apos;user_role_user_id&apos;</span> <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+Role<span class="token punctuation">.</span><span class="token function">belongsToMany</span><span class="token punctuation">(</span>User<span class="token punctuation">,</span> <span class="token punctuation">{</span> <span class="token literal-property property">through</span><span class="token operator">:</span> <span class="token string">&apos;user_has_roles&apos;</span><span class="token punctuation">,</span> <span class="token literal-property property">foreignKey</span><span class="token operator">:</span> <span class="token string">&apos;roles_identifier&apos;</span> <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre>
+<footer class="page-footer"><span class="copyright">&#x6708;&#x660E; all right reserved&#xFF0C;powered by Gitbook</span><span class="footer-modification">&#x8BE5;&#x6587;&#x4EF6;&#x6700;&#x540E;&#x4FEE;&#x6539;&#x65F6;&#x95F4;&#xFF1A;
+2022-03-25 18:10:52
+</span></footer>
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="connection-pool.html" class="navigation navigation-prev " aria-label="Previous page: Connection Pool - 连接池">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="migrations.html" class="navigation navigation-next " aria-label="Next page: Migrations - 迁移">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"Working with Legacy Tables - 使用遗留表","level":"3.15","depth":1,"next":{"title":"Migrations - 迁移","level":"3.16","depth":1,"path":"other-topics/migrations.md","ref":"other-topics/migrations.md","articles":[]},"previous":{"title":"Connection Pool - 连接池","level":"3.14","depth":1,"path":"other-topics/connection-pool.md","ref":"other-topics/connection-pool.md","articles":[]},"dir":"ltr"},"config":{"plugins":["-lunr","-search","-highlight","-livereload","-sharing","-fontsettings","search-pro","chapter-fold","expandable-chapters","splitter","anchor-navigation-ex","lightbox","tbfed-pagefooter","hide-element","prism","copy-code-button","editlink"],"root":"/doc","styles":{"website":"styles/website.css"},"pluginsConfig":{"tbfed-pagefooter":{"copyright":"月明","modify_label":"该文件最后修改时间：","modify_format":"YYYY-MM-DD HH:mm:ss"},"chapter-fold":{},"prism":{"css":["prismjs/themes/prism-okaidia.css"],"ignore":["null","undefined","vue","HTML","clang","cmd","tex","mysql"]},"editlink":{"label":"Edit This Page","multilingual":false,"base":"https://github.com/moon610"},"splitter":{},"search-pro":{},"hide-element":{"elements":[".gitbook-link"]},"anchor-navigation-ex":{"associatedWithSummary":true,"float":{"floatIcon":"fa fa-navicon","level1Icon":"","level2Icon":"","level3Icon":"","showLevelIcon":false},"mode":"float","multipleH1":true,"pageTop":{"level1Icon":"","level2Icon":"","level3Icon":"","showLevelIcon":false},"printLog":true,"showGoTop":true,"showLevel":false},"lightbox":{"jquery":true,"sameUuid":false},"copy-code-button":{},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"expandable-chapters":{}},"theme":"default","author":"月歌","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"notebook","gitbook":"3.2.3","description":"记录学习和生活"},"file":{"path":"other-topics/legacy.md","mtime":"2022-03-25T10:10:52.070Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2022-03-25T10:43:32.004Z"},"basePath":"..","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="../gitbook/gitbook.js"></script>
+    <script src="../gitbook/theme.js"></script>
+    
+        
+        <script src="../gitbook/gitbook-plugin-search-pro/jquery.mark.min.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search-pro/search.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-chapter-fold/chapter-fold.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-expandable-chapters/expandable-chapters.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-splitter/splitter.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lightbox/js/lightbox.min.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-hide-element/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-copy-code-button/toggle.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-editlink/plugin.js"></script>
+        
+    
+
+    </body>
+</html>
+
