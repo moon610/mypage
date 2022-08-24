@@ -15,7 +15,7 @@ function keyDown(e){
 		var site = document.getElementById("site");
 		//var url = "https://www.google.com/search?q="+searchWord+"&num=20&pws=0&safe=off&hl=zh-CN&gl=sg&aq=f"
 		//+"&as_sitesearch="+site.value+"&as_qdr="+btntime.value;
-		var url = "https://duckduckgo.com/?q=!g "+searchWord+"&kp=-2";
+		var url = "https://search.yuege.website/search?q="+searchWord;
 		if(bt1.className=="on"){
 			url = "https://www.google.com/search?q="+searchWord+"&num=20&pws=0&safe=off&hl=zh-CN&gl=sg&aq=f"
 			+"&as_sitesearch="+site.value+"&as_qdr="+btntime.value+"&lr=lang_zh-CN";
