@@ -7,9 +7,9 @@
 		<!-- <link rel="icon" type="image/x-icon" href="https://img11.360buyimg.com/ddimg/jfs/t1/6233/29/14280/34956/60c0f6f0E4da9dbef/bdba00f39c977c95.png" /> -->
 		<link rel="stylesheet" type="text/css" href="css/index.css"/>
 		<title></title>
-		<script language="JavaScript" src="js/index.js"></script>
+		<script async language="JavaScript" src="js/index.js"></script>
 	</head>
-	<body onload="onloadbody()">
+	<body>
 		<div id="show"></div>
 		<!-- <div id="blackbg"></div> -->
 		
@@ -17,32 +17,8 @@
 			<div id="timeclick" style="padding: 20px;width:50px;margin:0 auto;position: relative;z-index: 3;">
 			</div>
 			<h1 id="timeText"></h1>
-			<input type="search" id="search" name="q" onkeydown="keyDown(event)" autocomplete="off" autofocus="autofocus"
-			  placeholder="Search" onfocus="onfocusbg()" onblur="onblurbg()">
-			  <div id="searchCondition" class="false">
-				  <table id="conTable">
-					  <tr>
-						  <td>
-							  <button id="lr" class="off" onclick="bt1onclick()">仅搜索中文</button>
-							  <button id="intext" class="off" onclick="bt2onclick()">在内容中搜索</button>
-							  <select id="time" name="selecttime">
-							  	<option value="null" selected="selected">选择时间</option>
-							  	<option value="h">过去一小时</option>
-							  	<option value="d">过去一天</option>
-							  	<option value="w">过去一周</option>
-							  	<option value="m">过去一月</option>
-							  	<option value="y">过去一年</option>
-							  	<option value="y3">过去三年</option>
-							  </select>
-							  <br /><br />
-							  <button id="reset" class="re" onclick="resetonclick()">重置</button>
-							  <input type="text" id="site" placeholder="site:" autocomplete="off" onfocus="onfocussite()" onblur="onblursite()">
-							  <button id="submit" class="re" onclick="submitonclick()">确认</button>
-							  </td>
-							  
-					  </tr>
-				  </table>
-			  </div>
+			<input type="search" id="search" name="q" autocomplete="off" autofocus="autofocus"
+			  placeholder="Search">
 		</div>
 		<div id="aword">
 						  <p id="text"></p>
