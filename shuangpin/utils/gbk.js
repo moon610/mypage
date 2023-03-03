@@ -16,7 +16,7 @@
 **	组件地址：http://www.1kjs.com/lib/widget/gbk/
 **  ==================================================================================================  
 **/
-$URL=function(){
+var $URL=function(){
 	var data=function(zipData){
 			var re=zipData
 			.replace(/#(\d+)\$/g,function(a,b){
@@ -79,3 +79,5 @@ $URL=function(){
 		}
 	};
 }();
+
+export {$URL}

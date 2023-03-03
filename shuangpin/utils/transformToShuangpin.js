@@ -6,7 +6,7 @@ let t = {
         })
     },
     bytesToWords: function (e) {
-        let t, n;
+        let t, n, r;
         for (t = [], n = 0, r = 0; n < e.length; n++, r += 8)
             t[r >>> 5] |= e[n] << 24 - r % 32;
         return t
@@ -158,22 +158,4 @@ function wordsEncoding(word) {
     return (t.bytesToHex(t.wordsToBytes(t.endian([f, c, s, d]))))
 }
 
-function wordToShuangpin(word) {
-    // const xhr = new XMLHttpRequest();
-    // xhr.open('post', 'http://www.xhup.club/Xhup/Search/searchCode', true)
-    // xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded')
-    // xhr.send(`search_word=${encodeURI('费')}&sign=${wordsEncoding('费')}`)
-    // xhr.onreadystatechange = function () {
-    //     if (xhr.readyState === 4 && xhr.status === 200) {
-    //         const res = xhr.responseText
-    //         console.log('data:', res)
-    //     }
-    // }
-    return fetch('http://www.xhup.club/Xhup/Search/searchCode', {
-        method: 'post',
-        headers: {
-            'Content-Type': 'application/x-www-form-urlencoded'
-        },
-        body: `search_word=${encodeURI(word)}&sign=${wordsEncoding(word)}`
-    }).then(res => res.json())
-}
+export {wordsEncoding}

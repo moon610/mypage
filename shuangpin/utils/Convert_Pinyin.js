@@ -122,3 +122,5 @@ var pinyin = (function (){
   };
   return new Pinyin(arguments);
 })();
+
+export {pinyin}
