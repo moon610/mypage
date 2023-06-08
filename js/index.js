@@ -1,7 +1,7 @@
 function viewUrl(searchWord) {
 	//var url = "https://www.google.com/search?q="+searchWord+"&num=20&pws=0&safe=off&hl=zh-CN&gl=sg&aq=f"
 	//+"&as_sitesearch="+site.value+"&as_qdr="+btntime.value;
-	var url = "https://search.yuege.website/search?q=" + searchWord;
+	var url = "https://search.yuege.site/search?q=" + searchWord;
 	//num显示结果页数；pws个性化搜索；safe安全过滤；hl界面语言；gl区域
 	window.location.href = url;
 	// window.open( url );
