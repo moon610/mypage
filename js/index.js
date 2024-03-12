@@ -10,25 +10,25 @@ function viewUrl(searchWord) {
 
 //搜索框回车事件
 document.querySelector('#search').addEventListener('keydown', (e) => {
-	//input回车  
+	//input回车
 	var keycode = e.which;
 	var searchword = document.getElementById("search");
-	if (keycode == 13) //回车键是13 
+	if (keycode == 13) //回车键是13
 	{
-		viewUrl(searchword.value);//回车后的响应函数             
+		viewUrl(searchword.value);//回车后的响应函数
 	}
 })
 //搜索框聚焦时背景模糊
 document.querySelector('#search').addEventListener('focus', (e) => {
 	const bg = document.getElementById("show");
-	bg.style.transform = "scale(1.1)";
+	// bg.style.transform = "scale(1.1)";
 	bg.style.filter = "blur(8px)";
 	to = 300;
 })
 //搜索框失焦时背景清晰
 document.querySelector('#search').addEventListener('blur', (e) => {
 	const bg = document.getElementById("show");
-	bg.style.transform = "scale(1.0)";
+	// bg.style.transform = "scale(1.0)";
 	bg.style.filter = "blur(0px)";
 	to = 99999999;
 })
