@@ -1,12 +1,11 @@
 function viewUrl(searchWord) {
-	//var url = "https://www.google.com/search?q="+searchWord+"&num=20&pws=0&safe=off&hl=zh-CN&gl=sg&aq=f"
-	//+"&as_sitesearch="+site.value+"&as_qdr="+btntime.value;
+
 	var url = "https://search.yuege.site/search?q=" + searchWord;
-	//num显示结果页数；pws个性化搜索；safe安全过滤；hl界面语言；gl区域
 	window.location.href = url;
 	// window.open( url );
-	// location.href= url;
 }
+
+const bg = document.querySelector(".bg");
 
 //搜索框回车事件
 document.querySelector('#search').addEventListener('keydown', (e) => {
@@ -20,18 +19,33 @@ document.querySelector('#search').addEventListener('keydown', (e) => {
 })
 //搜索框聚焦时背景模糊
 document.querySelector('#search').addEventListener('focus', (e) => {
-	const bg = document.getElementById("show");
-	// bg.style.transform = "scale(1.1)";
+	bg.style.transform = "scale(1.1)";
 	bg.style.filter = "blur(8px)";
 	to = 300;
 })
 //搜索框失焦时背景清晰
 document.querySelector('#search').addEventListener('blur', (e) => {
-	const bg = document.getElementById("show");
-	// bg.style.transform = "scale(1.0)";
+	bg.style.transform = "scale(1.0)";
 	bg.style.filter = "blur(0px)";
 	to = 99999999;
 })
+
+const bgLoad = () => {
+	bg.style.display = "block";
+	bg.style.opacity = 1;
+}
+if(bg.complete) {
+	bgLoad()
+} else {
+	bg.addEventListener('load', bgLoad)
+
+}
+
+// window.addEventListener('resize', ()  => {
+// 	console.log('111')
+	// var container = document.querySelector('#container');
+	// container.style = `height: ${window.innerHeight}px;`;
+// });
 
 //得到时间并写入div
 function getTime() {
