@@ -1,8 +1,7 @@
 function viewUrl(searchWord) {
-
 	var url = "https://search.yuege.site/search?q=" + searchWord;
-	window.location.href = url;
-	// window.open( url );
+	// window.location.href = url;
+	window.open(url);
 }
 
 const bg = document.querySelector(".bg");
@@ -15,6 +14,7 @@ document.querySelector('#search').addEventListener('keydown', (e) => {
 	if (keycode == 13) //回车键是13
 	{
 		viewUrl(searchword.value);//回车后的响应函数
+		searchword.value = "";
 	}
 })
 //搜索框聚焦时背景模糊
@@ -30,6 +30,7 @@ document.querySelector('#search').addEventListener('blur', (e) => {
 	to = 99999999;
 })
 
+//背景加载
 const bgLoad = () => {
 	bg.style.display = "block";
 	bg.style.opacity = 1;
@@ -43,7 +44,7 @@ if(bg.complete) {
 
 // window.addEventListener('resize', ()  => {
 // 	console.log('111')
-	// var container = document.querySelector('#container');
+	// var container = document.querySelector('#main-box');
 	// container.style = `height: ${window.innerHeight}px;`;
 // });
 
