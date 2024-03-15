@@ -44,8 +44,9 @@ if(bg.complete) {
 
 // window.addEventListener('resize', ()  => {
 // 	console.log('111')
-	// var container = document.querySelector('#main-box');
-	// container.style = `height: ${window.innerHeight}px;`;
+// 	if(window.innerHeight > window.innerWidth) {
+// 		bg.style = `height: ${window.innerHeight}px`
+// 	}
 // });
 
 //得到时间并写入div
