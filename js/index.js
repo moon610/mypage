@@ -1,7 +1,7 @@
 function viewUrl(searchWord) {
 	var url = "https://search.yuege.site/search?q=" + searchWord;
-	// window.location.href = url;
-	window.open(url);
+	window.location.href = url;
+	//window.open(url);
 }
 
 const bg = document.querySelector(".bg");
