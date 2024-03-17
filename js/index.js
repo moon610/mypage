@@ -1,4 +1,14 @@
-function viewUrl(searchWord) {
+async function viewUrl(searchWord) {
+	searchWord = searchWord.trim()
+	if (searchWord.startsWith('@')) {
+		try{
+			const { viewMark } = await import('/js/fastlink.js')
+			const res = viewMark(searchWord)
+			if (res) return
+		} catch(e) {
+			console.log(e.stack)
+		}
+	}
 	var url = "https://search.yuege.site/search?q=" + searchWord;
 	window.location.href = url;
 	//window.open(url);
@@ -35,7 +45,7 @@ const bgLoad = () => {
 	bg.style.display = "block";
 	bg.style.opacity = 1;
 }
-if(bg.complete) {
+if (bg.complete) {
 	bgLoad()
 } else {
 	bg.addEventListener('load', bgLoad)
@@ -56,8 +66,11 @@ function getTime() {
 	const h = date.getHours();
 	let m = date.getMinutes();
 	m = m < 10 ? '0' + m : m;
+	const currentTime = h + ":" + m;
 	var ti = document.getElementById("timeText");
-	ti.innerHTML = h + ":" + m;
+	if (ti.innerText !== currentTime) {
+		ti.innerHTML = currentTime
+	}
 }
 //使用定时器每秒向div写入当前时间
 setInterval("getTime()", 1000);
