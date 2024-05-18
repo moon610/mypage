@@ -9,7 +9,7 @@ async function viewUrl(searchWord) {
 			console.log(e.stack)
 		}
 	}
-	var url = "https://search.yuege.website/search?q=" + searchWord;
+	var url = "https://www.bing.com/search?q=" + searchWord;
 	window.location.href = url;
 	//window.open(url);
 }
